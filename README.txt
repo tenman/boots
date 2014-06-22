@@ -1,0 +1,24 @@
+boots WordPress Child Theme
+Theme URL: http://www.tenman.info/wp3/boots
+Author URL: http://www.tenman.info/
+Parent Theme: raindrops
+Parent Theme url: http://www.tenman.info/wp3/raindrops/
+
+boots/images/headers/wp3.jpg
+boots/images/footer.png
+boots/images/h2.png
+boots/images/h2b.png
+boots/images/h2c.png
+
+Above images License
+
+copyright   Copyright (c) 2014, Tenman
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This themes contents is especially the thing without clear statement of a license
+supply under below license.
+
+copyright   Copyright (c) 2010-2012, Tenman
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
