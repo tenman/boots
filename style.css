@@ -1,0 +1,387 @@
+/*
+Theme Name: boots
+Theme URI: http://www.tenman.info/wp3/broad
+Description: header and footer full width Child theme of Raindrops
+Author: Tenman
+Author URI: http://www.tenman.info/wp3/
+Version: 1.219
+Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, accessibility-ready
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: raindrops
+*/
+/** ALL COLOR TYPES
+ * Common Styles
+ *
+ *
+ */
+
+@import url( ../raindrops/childs/boots/style.css );
+
+a{
+    color:#555;
+}
+a:visited{
+    color:#333;
+}
+
+/** ALL COLOR TYPES
+ * HEADER
+ *
+ */
+#header-image{
+    margin:auto;
+    width:100%!important;
+    overflow:hidden;
+    background-size:cover!important;
+    min-height:100px;
+}
+#header-image p{
+    display:none;
+}
+header#top{
+    background:transparent!important;
+}
+#header-inner{
+    text-align:left;
+    padding:1em;
+
+}
+/** ALL COLOR TYPES
+ * DOCUMENT BODY
+ *
+ */
+#bd{
+    margin-top:3px;
+    margin-bottom:8px;
+}
+/** ALL COLOR TYPES
+ * FOOTER
+ *
+ */
+#ft{
+    background-repeat:repeat!important;
+}
+#ft div.widget-wrapper>ul>li {
+    padding: .5%;
+    width: 32.3%;
+    float: left;
+    display: inline-block;
+    margin: auto;
+    text-align:left;
+}
+#ft .footer-widget h2{
+    background-repeat:no-repeat;
+}
+address{
+    margin-top:16px;
+}
+#ft{
+    margin:auto;
+    width:100%!important;
+    overflow:hidden;
+}
+#ft #calendar_wrap,
+#ft a,
+#ft{
+    color:#fff;
+}
+#ft #calendar_wrap th{
+    background:#fff;
+    color:#333;
+    padding:1em 0;
+}
+#ft #calendar_wrap td{
+    border:1px solid rgba(222,222,222,.5);
+    text-align:center;
+    padding:1em 0;
+}
+#ft #calendar_wrap tfoot td{
+    border:none;
+    text-align:left;
+}
+.rd-type-minimal #ft{
+    background:url( images/footer.png );
+}
+/** ALL COLOR TYPES
+ * WP_NAV_MENUS()
+ *
+ */
+/*#access .children li,*/
+.menu-header .sub-menu a,
+.menu-header .children a,
+.menu-header{
+    margin:auto!important;
+    text-align:left;
+}
+#access .menu-header,
+#access .menu{
+    max-width:1280px;
+    margin:auto;
+    display:block;
+}
+/** ALL COLOR TYPES
+ * Accessibility
+ *
+ */
+.raindrops-accessible-mode #ft a:focus,
+.raindrops-accessible-mode #access a:focus,
+.raindrops-accessible-mode #site-title a:focus span{
+    color:red!important;
+}
+/** ALL COLOR TYPES
+ * Gallery
+ *
+ */
+.gallery { 
+    margin: auto;
+    overflow: hidden;
+    width: 100%; 
+}
+.gallery dl { 
+    margin: 0px; 
+}
+.gallery .gallery-item { 
+    float: left; 
+    margin-top: 10px;
+    text-align: center; 
+}
+.gallery img {
+    border: 2px solid #cfcfcf;
+    max-width:100%;
+}
+.gallery .gallery-caption { 
+    margin-left: 0; 
+}
+.gallery br { 
+    clear: both 
+}
+.gallery-columns-1 dl{
+    width: 100%
+}
+.gallery-columns-2 dl{ 
+    width: 50% 
+}
+.gallery-columns-3 dl{ 
+    width: 33.3%
+}
+.gallery-columns-4 dl{ 
+    width: 25% 
+}
+.gallery-columns-5 dl{ 
+    width: 20% 
+}
+.gallery-columns-6 dl{ 
+    width: 16.6% 
+}
+.gallery-columns-7 dl{
+    width: 14.28% 
+}
+.gallery-columns-8 dl{
+    width: 12.5%
+}
+.gallery-columns-9 dl{ 
+    width: 11.1%
+}
+.gallery-columns-10 dl{
+    width: 9.9% 
+}
+
+/** ALL COLOR TYPES
+ * Form
+ *
+ */
+input[type="file"], input[type="reset"], input[type="submit"]{
+    font-size:11px;
+}
+/** COLOR TYPE BROAD
+ *
+ * Base Color Type : Dark
+ *
+ */
+.rd-type-boots  a{
+    color:#555;
+}
+/** Page Background*/
+.rd-type-boots #doc4,
+.rd-type-boots #doc2,
+.rd-type-boots #doc,
+.rd-type-boots #yui-main .entry-meta,
+.rd-type-boots #yui-main:not(article){
+    background:#fff;
+    color:#000;
+}
+.rd-type-boots body{
+    background:#fff;
+}
+.rd-type-boots .widgettitle,
+.rd-type-boots #access .current_page_item,
+.rd-type-boots #access a,
+.rd-type-boots #yui-main a{
+    background:transparent;
+    color:#333;
+}
+
+.rd-type-boots #yui-main #nav-above a,
+.rd-type-boots #yui-main #nav-below a,
+.rd-type-boots #yui-main article a{
+    color:#444;
+}
+.home.rd-type-boots #header-image{
+    min-height:100px;
+}
+.home.rd-type-boots  .sticky{
+    background:#eee!important;
+    color:#000!important;
+}
+.rd-type-boots .rsidebar,
+.rd-type-boots .lsidebar{
+    margin-top:5px;
+    margin-bottom:5px;
+
+}
+.rd-type-boots .yui-t6 .lsidebar,
+.rd-type-boots .yui-t5 .lsidebar,
+.rd-type-boots .yui-t4 .lsidebar{
+    margin-right:5px;
+    margin-left:-6px;
+}
+.rd-type-boots #hd{
+    display:none!important;
+}
+.ie9 #hd + a,
+.ie8 #hd + a{
+    display:none;
+}
+.ie9 #top > a,
+.ie8 #top + a{
+    display:none;
+}
+.rd-type-boots.home.ie9 #header-image{
+    min-height:160px;
+}
+
+.rd-type-boots address{
+    margin-top:16px;
+}
+.rd-type-boots #access{
+    margin:0;
+    background:#fff;
+    width:100%;
+
+}
+.rd-type-boots #header-image .description{
+    color:#fff;
+}
+.rd-type-boots #access .menu{
+    max-width:1280px;
+    margin:auto;
+}
+/*.rd-type-boots #access .menu-header li a, */
+.rd-type-boots .menu li a{
+    background:#fff;
+}
+.rd-type-boots #ft .widgettitle{
+
+    color:#fff;
+}
+
+body.rd-type-boots{
+    border-top:none!important;
+}
+.rd-type-boots  .datetable #date_list,
+.rd-type-boots  .datetable .month-date{
+    text-align:center;
+    vertical-align:top;
+}
+
+.rd-type-boots  .datetable .month-date .day-name{
+    margin:1em;
+}
+.rd-type-boots  .datetable .time + td,
+.rd-type-boots  .datetable .month-date + td{
+    text-align:left;
+}
+.rd-type-boots #raindrops_year_list .month-name a{
+    margin-top:1em;
+}
+.rd-type-boots #raindrops_year_list .month-name,
+.rd-type-boots .month-date .day-name{
+    text-align:center;
+    vertical-align:middle;
+}
+/** COLOR TYPE BROAD
+ *
+ * Borders
+ *
+ */
+.rd-type-boots .rsidebar li,
+.rd-type-boots .lsidebar li{
+    border-bottom:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots  .rsidebar > ul > li > ul,
+.rd-type-boots  .lsidebar > ul > li > ul{
+    border-top:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots #ft .widgettitle{
+    border-bottom:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots input[type="text"],
+.rd-type-boots input[type="submit"],
+.rd-type-boots input[type="reset"],
+.rd-type-boots input[type="file"] {
+    border: 1px solid #ccc;
+}
+.rd-type-boots .entry-meta{
+    border-top:1px solid rgba(222,222,222,.5);
+    border-bottom:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots  .datetable .time + td,
+.rd-type-boots  .datetable .month-date + td ,
+.rd-type-boots  .datetable .month-date + td > ul > li{
+    border-bottom:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots .commentlist .comment{
+    border:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots .commentlist .children li{
+    border:none;
+}
+.rd-type-boots .commentlist .children .reply{
+    border-bottom:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots #raindrops_year_list td,
+.rd-type-boots #date_list td,
+.rd-type-boots #month_list td{
+    border:1px solid rgba(222,222,222,.5);
+}
+.rd-type-boots #raindrops_year_list td{
+    height:2em;
+    vertical-align:middle;
+    text-align:left;
+}
+
+@media screen and (max-width :1280px){
+    #site-title{font-size:2em;}
+}
+@media screen and (max-width : 640px){
+
+    #site-title{font-size:1.5em;}
+
+    #yui-main .yui-u .rsidebar,
+    #yui-main .yui-u .lsidebar{
+        min-height:0!important;
+    }
+    .rd-type-boots #access a{
+        text-align:left;
+        color:#fff;
+
+    }
+    .rd-type-boots #access li{
+        background:transparent;
+        padding-left:1em;
+    }
+    .rd-type-boots #access{
+        background:#000;
+    }
+}
