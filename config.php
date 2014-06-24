@@ -1,4 +1,10 @@
 <?php
+/** Theme base font size 
+ * 
+ * default 15  means 15px
+ */
+$raindrops_base_font_size = 15;
+
 /**
  * Enabling accessibility links when Setting value no at Raindrops options page Accessibility Settings
  * 
@@ -75,4 +81,4 @@ $raindrops_where_excerpts = array( 'is_search' );
  * @since 0.980
  */
 $raindrops_actions_hook_message = false;
-
+?>

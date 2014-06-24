@@ -22,3 +22,6 @@ supply under below license.
 copyright   Copyright (c) 2010-2012, Tenman
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Note: About boots version.
+The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
