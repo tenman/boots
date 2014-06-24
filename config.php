@@ -11,14 +11,14 @@ $raindrops_base_font_size = 15;
  * 
  * @since1.217
  */
-$raindrops_accessibility_link       = true;
+$raindrops_accessibility_link       = false;
 /**
  * Display Status Bar
  * 
  * 
  * @since1.217
  */
-$raindrops_status_bar               = true;
+$raindrops_status_bar               = false;
 /** Custom Page width for fluid ( responsive )
  *
  * fluid page  main column maximum width px
