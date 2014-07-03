@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/broad
 Description: header and footer full width Child theme of Raindrops. This theme has been taken into account so we have complete control in the child theme of various functions of Raindrops theme.
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.225.1
+Version: 1.225.2
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,9 @@ a:visited{
     overflow:hidden;
     background-size:cover!important;
     min-height:100px;
+}
+#top #header-image{
+        height:160px;
 }
 #header-image p{
     display:none;
@@ -92,7 +95,7 @@ address{
     padding:1em 0;
 }
 #ft #calendar_wrap td{
-    border:1px solid rgba(222,222,222,.5);
+    border:1px solid rgba(222,222,222,1);
     text-align:center;
     padding:1em 0;
 }
@@ -238,13 +241,20 @@ input[type="file"], input[type="reset"], input[type="submit"]{
 .rd-type-boots .lsidebar{
     margin-top:5px;
     margin-bottom:5px;
-
 }
 .rd-type-boots .yui-t6 .lsidebar,
 .rd-type-boots .yui-t5 .lsidebar,
 .rd-type-boots .yui-t4 .lsidebar{
     margin-right:5px;
     margin-left:-6px;
+}
+.rd-type-boots .rsidebar a,
+.rd-type-boots .lsidebar a{
+    padding:10px;
+}
+.rd-type-boots .rsidebar ul li ul li,
+.rd-type-boots .lsidebar ul li ul li{
+    padding-top:.5em;
 }
 .rd-type-boots #hd{
     display:none!important;
@@ -317,14 +327,14 @@ body.rd-type-boots{
  */
 .rd-type-boots .rsidebar li,
 .rd-type-boots .lsidebar li{
-    border-bottom:1px solid rgba(222,222,222,.5);
+    border-bottom:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots  .rsidebar > ul > li > ul,
 .rd-type-boots  .lsidebar > ul > li > ul{
-    border-top:1px solid rgba(222,222,222,.5);
+    border-top:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots #ft .widgettitle{
-    border-bottom:1px solid rgba(222,222,222,.5);
+    border-bottom:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots input[type="text"],
 .rd-type-boots input[type="submit"],
@@ -333,39 +343,46 @@ body.rd-type-boots{
     border: 1px solid #ccc;
 }
 .rd-type-boots .entry-meta{
-    border-top:1px solid rgba(222,222,222,.5);
-    border-bottom:1px solid rgba(222,222,222,.5);
+    border-top:1px solid rgba(222,222,222,1);
+    border-bottom:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots  .datetable .time + td,
 .rd-type-boots  .datetable .month-date + td ,
 .rd-type-boots  .datetable .month-date + td > ul > li{
-    border-bottom:1px solid rgba(222,222,222,.5);
+    border-bottom:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots .commentlist .comment{
-    border:1px solid rgba(222,222,222,.5);
+    border:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots .commentlist .children li{
     border:none;
 }
 .rd-type-boots .commentlist .children .reply{
-    border-bottom:1px solid rgba(222,222,222,.5);
+    border-bottom:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots #raindrops_year_list td,
 .rd-type-boots #date_list td,
 .rd-type-boots #month_list td{
-    border:1px solid rgba(222,222,222,.5);
+    border:1px solid rgba(222,222,222,1);
 }
 .rd-type-boots #raindrops_year_list td{
     height:2em;
     vertical-align:middle;
     text-align:left;
 }
+.rd-type-boots .rsidebar ul li ul li,
+.rd-type-boots .lsidebarul ul li ul li{
+    color:#999;
+}
 
 @media screen and (max-width :1280px){
     #site-title{font-size:2em;}
 }
 @media screen and (max-width : 640px){
-
+    .rd-type-boots .rsidebar,
+    .rd-type-boots .lsidebar{
+        height:auto!important;
+    }
     #site-title{font-size:1.5em;}
 
     #yui-main .yui-u .rsidebar,
@@ -383,5 +400,59 @@ body.rd-type-boots{
     }
     .rd-type-boots #access{
         background:#000;
+    }
+    .rd-type-boots #ft .footer-widget {
+        float:none;
+        margin:0;
+        margin-left:0;
+        margin-right:0;
+        display:block;
+        max-width:100%;
+        width:100%;
+        box-sizing: border-box;
+        clear:both;
+        background-repeat:no-repeat;
+        position:static;
+    }
+    .rd-type-boots #ft .widget_categories ul li a,
+    .rd-type-boots #ft .widget_categories ul li a,
+    .rd-type-boots #ft .widget_archive ul li a,
+    .rd-type-boots #ft .widget_archive ul li a,
+    .rd-type-boots #ft .categories ul li a,
+    .rd-type-boots #ft .categories ul li a{
+        display:inline-block;
+        width:85%;
+        padding:.5em;
+    }
+    .rd-type-boots #ft .widget_tag_cloud .tagcloud a,
+    .rd-type-boots #ft .widget_tag_cloud .tagcloud a{
+        display:inline-block!important;
+        width:23%;
+        padding:.5em 0;
+
+    }
+    .rd-type-boots .footer-widget h2,
+    .rd-type-boots h2.footer-content{
+        background-repeat:no-repeat;
+        height:2em;
+        background:none;
+    }
+    #doc3 .reply, #ft a{
+        display:block;
+        background-repeat:no-repeat;
+        width:100%;
+        height:100%;
+        margin:0;
+        padding:0.5em;
+        box-sizing: border-box;
+        font-size:123%;
+
+    }
+    .rd-type-boots .lsidebar a,
+    .rd-type-boots #yui-main .rsidebar a,
+    .rd-type-boots .lsidebar,
+    .rd-type-boots .rsidebar{
+        background:#555;
+        color:#fff;
     }
 }

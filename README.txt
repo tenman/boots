@@ -25,3 +25,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
+
+ver:1.225.2
+	remove  tag Accessibility-ready
