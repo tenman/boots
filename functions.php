@@ -53,7 +53,3 @@ if ( isset( $raindrops_child_base_setting_args ) && !empty( $raindrops_child_bas
 
     $raindrops_base_setting = $raindrops_child_base_setting_args;
 }
-
-
-
-

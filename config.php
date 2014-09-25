@@ -1,4 +1,5 @@
 <?php
+
 /** Theme base font size 
  * 
  * default 15  means 15px
