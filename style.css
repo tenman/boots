@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/boots
 Description: header and footer full width Child theme of Raindrops. This theme has been taken into account so we have complete control in the child theme of various functions of Raindrops theme.
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.244.0
+Version: 1.259.0
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,52 @@ a{
 }
 a:visited{
     color:#333;
+}
+
+.rd-type-boots #access .children a,
+.rd-type-boots #access .sub-menu a{
+    padding:10px;
+    background:#fff;
+    color:#555;
+}
+
+.rd-type-boots #ft{
+    background:#777;
+}
+.rd-type-boots #site-title{
+    margin:.5em 0 0;
+}
+.rd-type-dark .no-header-image .description,
+.rd-type-dark .no-header-image #site-title,
+.in-header-image .description,
+.in-header-image #site-title,
+.rd-type-minimal #ft a{
+    color:#fff;
+}
+.no-header-image .description,
+.no-header-image #site-title{
+    color:#000;
+}
+/* for template front-page.php */
+.page-template-page-templatesfront-page-php.rd-type-boots #top #site-description,
+.page-template-page-templatesfront-page-php.rd-type-boots #hd{
+    display:block!important;
+    color:#000;
+}
+.page-template-page-templatesfront-page-php.rd-type-boots #site-title span{
+    color:#000;
+}
+/* for template front-page.php end */
+/* the events calendar plugin */
+.events-archive .entry-title, .events-single .entry-title, .icon-link-no-title{
+    display:none;
+}
+.enable-keyboard a:focus{
+    border-bottom:1px solid orange;
+    margin-bottom:-1px!important;
+}
+.rd-type-boots .entry-title{
+    min-height:1.4em;
 }
 
 /** ALL COLOR TYPES
@@ -106,36 +152,12 @@ address{
 .rd-type-minimal #ft{
     background:url( images/footer.png );
 }
-/** ALL COLOR TYPES
- * WP_NAV_MENUS()
- *
- */
-/*#access .children li,*/
-.menu-header .sub-menu a,
-.menu-header .children a,
-.menu-header{
-    margin:auto!important;
-    text-align:left;
-}
-#access .menu-header,
-#access .menu{
-    max-width:1280px;
-    margin:auto;
-    display:block;
-}
-/** ALL COLOR TYPES
- * Accessibility
- *
- */
-.raindrops-accessible-mode #ft a:focus,
-.raindrops-accessible-mode #access a:focus,
-.raindrops-accessible-mode #site-title a:focus span{
-    color:red!important;
-}
+
 /** ALL COLOR TYPES
  * Gallery
  *
  */
+
 .gallery {
     margin: auto;
     overflow: hidden;
@@ -218,8 +240,6 @@ input[type="file"], input[type="reset"], input[type="submit"]{
     background:#fff;
 }
 .rd-type-boots .widgettitle,
-.rd-type-boots #access .current_page_item,
-.rd-type-boots #access a,
 .rd-type-boots #yui-main a{
     background:transparent;
     color:#333;
@@ -274,23 +294,7 @@ input[type="file"], input[type="reset"], input[type="submit"]{
 .rd-type-boots address{
     margin-top:16px;
 }
-.rd-type-boots #access{
-    margin:0;
-    background:#fff;
-    width:100%;
 
-}
-.rd-type-boots #header-image .description{
-    color:#fff;
-}
-.rd-type-boots #access .menu{
-    max-width:1280px;
-    margin:auto;
-}
-/*.rd-type-boots #access .menu-header li a, */
-.rd-type-boots .menu li a{
-    background:#fff;
-}
 .rd-type-boots #ft .widgettitle{
 
     color:#fff;

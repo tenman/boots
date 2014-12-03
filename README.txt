@@ -27,6 +27,8 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+ver:1.259.0
+
 ver:1.244.0
 	Change Theme URI	from http://www.tenman.info/wp3/broad
 						to http://www.tenman.info/wp3/boots

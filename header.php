@@ -24,12 +24,8 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
 
                 echo raindrops_header_image( 'home_url' );
             }
-            ?>
-            <?php
-            $image = get_header_image();
-            if ( empty( $image ) ) {
-                echo boots_custom_header_image_content( '' );
-            }
+            
+			echo boots_custom_header_image_content( '' );
             ?>
             <div class="broad-nav-menu-wrapper" style="margin:auto;width:<?php echo boots_page_width(); ?>">     <?php
                 /**
