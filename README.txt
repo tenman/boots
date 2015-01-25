@@ -27,7 +27,7 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
-ver:1.269.0
+ver:1.269.1
 	CSS modify remove overflow:hidden from .gallery
 ver:1.259.0
 	header.php remove check header image empty conditional
