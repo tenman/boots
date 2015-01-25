@@ -160,7 +160,6 @@ address{
 
 .gallery {
     margin: auto;
-    overflow: hidden;
     width: 100%;
 }
 .gallery dl {
