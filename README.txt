@@ -27,6 +27,11 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+ver:1.269.0
+	CSS modify remove overflow:hidden from .gallery
+ver:1.259.0
+	header.php remove check header image empty conditional
+	CSS modify
 ver:1.244.0
 	Change Theme URI	from http://www.tenman.info/wp3/broad
 						to http://www.tenman.info/wp3/boots
