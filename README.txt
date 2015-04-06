@@ -29,6 +29,20 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.282.0
+
+	Require, This Child Theme  needs Raindrops 1.282
+
+	Google font support
+	Change import css file name ../raindrops/childs/boots/style.css to ../raindrops/childs/boots/base.css
+	Modify style.css
+	Default Setting values change
+		RAINDROPS_USE_LIST_EXCERPT from false to true
+		footer.php add closed elements </div>
+		header.php add skiplinks
+		Change header-image conditional
+		Change default header image
+		Change CSS Class name from description to tagline
 ver:1.269.1
 	CSS modify remove overflow:hidden from .gallery
 ver:1.259.0
