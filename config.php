@@ -57,7 +57,7 @@ $raindrops_featured_image_full_size = true;
  */
 define( "RAINDROPS_SHOW_DELETE_POST_LINK", false );
 /** Excerpt Settings
- *
+ * Now YOU CAN USE CUSTOMIZER 
  * the_content(   ) or the_excerpt
  *
  * the_excerpt use where index,archive,other not single pages.
@@ -67,11 +67,11 @@ define( "RAINDROPS_SHOW_DELETE_POST_LINK", false );
  * add ver 1.127
  * When use excerpt please set $raindrops_where_excerpts
  */
-define( "RAINDROPS_USE_LIST_EXCERPT", false );
+define( "RAINDROPS_USE_LIST_EXCERPT", true );
 
 // values 'is_search', 'is_archive', 'is_category' ,'is_tax', 'is_tag' any conditional function name
 
-$raindrops_where_excerpts = array( 'is_search' );
+//$raindrops_where_excerpts = array( 'is_search' );
 
 /** Shows Place holder for insert contents
  *

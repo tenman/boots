@@ -9,7 +9,9 @@ boots/images/footer.png
 boots/images/h2.png
 boots/images/h2b.png
 boots/images/h2c.png
-
+boots/images/example1.jpg
+boots/images/example2.jpg
+boots/images/example3.jpg
 Above images License
 
 copyright   Copyright (c) 2014, Tenman

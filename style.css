@@ -16,13 +16,33 @@ Template: raindrops
  *
  */
 
-@import url( ../raindrops/childs/boots/style.css );
+@import url( ../raindrops/childs/boots/base.css );
 
 a{
     color:#555;
 }
 a:visited{
     color:#333;
+}
+.tagline{
+   color: #fff;
+}
+.rd-type-boots #header-image{
+    position:relative;
+}
+.rd-type-boots #header-image .tagline{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display:block;
+        height:1.6em;
+        margin: auto;
+        width:80%;
+        text-align:center;
+        font-size:186%;
+
 }
 
 .rd-type-boots #access .children a,
@@ -38,14 +58,14 @@ a:visited{
 .rd-type-boots #site-title{
     margin:.5em 0 0;
 }
-.rd-type-dark .no-header-image .description,
+.rd-type-dark .no-header-image p.tagline,
 .rd-type-dark .no-header-image #site-title,
-.in-header-image .description,
+.in-header-image p.tagline,
 .in-header-image #site-title,
 .rd-type-minimal #ft a{
     color:#fff;
 }
-.no-header-image .description,
+.no-header-image p.tagline,
 .no-header-image #site-title{
     color:#000;
 }
@@ -79,17 +99,15 @@ a:visited{
     margin:auto;
     width:100%!important;
     overflow:hidden;
-    background-size:cover!important;
+    background-size:cover;
     min-height:100px;
 }
-#top #header-image{
-        height:160px;
-}
+
 #header-image p{
     display:none;
 }
 header#top{
-    background:transparent!important;
+    background:transparent;
 }
 #header-inner{
     text-align:left;
@@ -458,4 +476,48 @@ body.rd-type-boots{
         background:#555;
         color:#fff;
     }
+    .rd-type-boots .lsidebar,
+    .rd-type-boots .lsidebar{
+        min-height:0;
+    }
+    .widget_recent-post-groupby-cat.footer-widget > ul{
+        position: relative;
+        display: block;
+        margin-left: 60px;
+        width: 80%;
+        width: calc(100% - 60px);
+        min-height: 4.5em;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+.rd-type-boots #header-image .tagline{
+    font-size:2vw;
+}
+.rd-type-boots .boots-nav-menu-wrapper{
+    background:#000;
+    color:#fff;
+}
+.rd-type-boots #access .sub-menu a,
+.rd-type-boots #access .chilren a,
+.rd-type-boots #access a{
+    color:#fff;
+    background:#000;
+}
+.rd-type-boots #site-title:hover span, 
+.rd-type-boots #site-title a:focus span, 
+.rd-type-boots #access .sub-menu.focus > a,
+.rd-type-boots #access .chilren.focus > a,
+.rd-type-boots #access li.focus > a,
+.rd-type-boots #access .sub-menu:hover > a,
+.rd-type-boots #access .chilren:hover > a,
+.rd-type-boots #access li:hover > a{
+    color:orange;
+}
+.rd-type-boots .raindrops-extend-archive li{
+    text-align:left;
+}
+
+#site-title a span{
+    color:#fff;
 }

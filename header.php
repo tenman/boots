@@ -8,35 +8,36 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
 <html <?php language_attributes(); ?>>
     <head>
         <meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+		<?php if ( raindrops_warehouse( 'raindrops_disable_keyboard_focus' ) == 'enable' ) { ?>	
+        <div class="skip-link"><a href="#container" class="screen-reader-text" title="<?php esc_attr_e( 'Skip to content', 'Raindrops' ); ?>"><?php esc_html_e( 'Skip to content', 'Raindrops' ); ?></a></div><?php echo raindrops_skip_links(); ?>
+		<?php } // raindrops_disable_keyboard_focus ?>
         <?php
         raindrops_prepend_doc();
         ?>
         <header id="top">
             <?php
-            if ( true == $raindrops_link_unique_text ) {
 
-                echo raindrops_header_image( 'elements' );
-            } else {
-
-                echo raindrops_header_image( 'home_url' );
-            }
-            
-			echo boots_custom_header_image_content( '' );
+            $header_image = raindrops_header_image( 'elements' );
+          
+			if( empty( $header_image ) ) {
+				echo raindrops_child_custom_header_image_content( '' );
+			} else {
+				echo $header_image;
+			}
             ?>
-            <div class="broad-nav-menu-wrapper" style="margin:auto;width:<?php echo boots_page_width(); ?>">     <?php
+            <div class="boots-nav-menu-wrapper" >
+				<div style="margin:auto;width:<?php echo boots_page_width(); ?>">    <?php
                 /**
                  * horizontal menubar
-                 *
-                 *
-                 *
-                 *
                  */
                 raindrops_nav_menu_primary();
-                ?>   </div>  <?php
+				?>   
+				</div>
+			</div>  <?php
             raindrops_after_nav_menu();
             ?>
         </header>

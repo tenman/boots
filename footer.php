@@ -7,6 +7,7 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
 ?>
 <?php raindrops_append_doc(); ?>
 </div>
+</div>
 <<?php raindrops_doctype_elements( 'div', 'footer' ); ?> id="ft" class="clear" <?php raindrops_doctype_elements( '', 'role="contentinfo"' ); ?>>
 <?php raindrops_prepend_footer(); ?>
 <!--footer-widget start-->
