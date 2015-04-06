@@ -29,9 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
-var:1.282.0
+var:1.283.0
 
-	Require, This Child Theme  needs Raindrops 1.282
+	Require, This Child Theme  needs Raindrops 1.283
 
 	Google font support
 	Change import css file name ../raindrops/childs/boots/style.css to ../raindrops/childs/boots/base.css
