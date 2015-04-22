@@ -10,7 +10,6 @@ function boots_init(){
  * 
  **/
     
-    
 /*
  * Add a CSS class to the body element in order to Page Width basis, and to style their own rules
  * 

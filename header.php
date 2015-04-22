@@ -37,9 +37,7 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
                 raindrops_nav_menu_primary();
 				?>   
 				</div>
-			</div>  <?php
-            raindrops_after_nav_menu();
-            ?>
+			</div>  <?php raindrops_after_nav_menu(); ?>
         </header>
         <div id="<?php echo esc_attr( raindrops_warehouse( 'raindrops_page_width' ) ); ?>" class="<?php echo esc_attr( 'yui-' . raindrops_warehouse( 'raindrops_col_width' ) ); ?> hfeed">
             <div id="bd" class="clearfix">

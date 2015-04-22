@@ -37,7 +37,7 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
 
         $accessible_url = raindrops_current_url();
 
-        $accessible_url = add_query_arg( 'friendly', 'true', $accessible_url );
+        $accessible_url = esc_url( add_query_arg( 'friendly', 'true', $accessible_url ) );
 
         $raindrops_address_html .= '<a href="' . $accessible_url . '" class="raindrops-accessibility-link">' . esc_html__( 'Accessible', 'Raindrops' ) . '</a>';
     }

@@ -29,6 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.285.1
+	Fixed for Security issue.
+		https://make.wordpress.org/plugins/2015/04/20/fixing-add_query_arg-and-remove_query_arg-usage/
 var:1.283.0
 
 	Require, This Child Theme  needs Raindrops 1.283
