@@ -1,0 +1,423 @@
+/**
+ * Boots Fonts Style Rules
+ * 
+ * YUI Fonts
+ *
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ *
+ * Filetype: CSS
+ * @package Raindrops
+ */
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.8.1
+
+google-font-playfair-display-sc
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+body{
+    font:13px 'Open Sans', arial,helvetica,clean,sans-serif;
+    line-height:1.231;
+   
+        text-transform:none;
+}
+/*
+body.ja{
+    font-family: 'Noto Sans Japanese', 'Meiryo',Arial,sans-serif;  
+}*/
+body.ie7{
+    /* for IE6/7 */ 
+    font-size:small; 
+    /* for IE Quirks Mode */
+    font:x-small sans-serif; 
+}
+
+/**
+ * Nudge down to get to 13px equivalent for these form elements
+ */ 
+select,
+input,
+button,
+textarea,
+button {
+    font:99% arial,helvetica,clean,sans-serif;
+}
+
+/**
+ * To help tables remember to inherit
+ */
+table {
+    font-size:inherit;
+    font:100% sans-serif;
+}
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,
+code,
+kbd,
+samp,
+tt {
+    font-family:monospace;
+    line-height:100%;
+}
+.ie7 pre,
+.ie7 code,
+.ie7 kbd,
+.ie7 samp,
+.ie7 tt {
+    font-size:108%;
+}
+
+/*			Raindrops Fonts settings
+                        @see style.css Responsive fonts settings	*/
+/**
+ * Font family
+ */
+#access .menu,
+#access div.menu ul{
+
+    font-family:'Open Sans', "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+}
+.ja #access .menu,
+.ja #access div.menu ul{
+    font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;
+}
+.rsidebar .widget .post-group_by-category-title a,
+.rsidebar .widget .post-group_by-category-title,
+.lsidebar .widget .post-group_by-category-title a,
+.lsidebar .widget .post-group_by-category-title,
+#archives-title .title,
+.archive .page-title,
+.raindrops-monthly-archive-prev-next-avigation a,
+.sticky-widget .post-group_by-category-title a,
+.widget_recent-post-groupby-cat h2,
+.widget_recent-post-groupby-cat h3,
+.commentlist .pingback p,
+.commentlist .comment-body,
+.commentlist .reply,
+.commentlist .raindrops-comment-author-meta,
+.commentlist .comment-meta,
+.datetable .time,
+.datetable .month-name,
+.datetable .year-name,
+.datetable .day-name,
+.form-allowed-tags,
+.footer-widget h2,
+.rsidebar h2,
+.lsidebar h2,
+.widget-title h2,
+.widgettitle h2,
+h2.footer-content,
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6{
+    font-family: 'Playfair Display', serif;
+}
+.rsidebar .post-group_by-category-title a,
+.rsidebar .post-group_by-category-title,
+.lsidebar .post-group_by-category-title a,
+.lsidebar .post-group_by-category-title,
+#archives-title .title,
+.archive .page-title,
+.raindrops-monthly-archive-prev-next-avigation a{
+    font-weight:700;
+    text-transform: uppercase;
+}
+
+#site-title span,
+var,
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3{
+    font-family:'Open Sans Condensed', "Times New Roman", Times, serif;
+     font-family: 'Playfair Display', serif;
+}
+
+.form-allowed-tags code,
+tt,code,kbd{
+    font-family:"Courier New", Courier, monospace;
+}
+.rd-type-boots .widgettitle{
+    font-family:'Open Sans', "Times New Roman", Times, serif;
+    font-weight:700;
+    text-transform: uppercase;
+     font-family: 'Playfair Display', serif;
+}
+
+#ft .eco-archive h3.month,
+#ft .eco-archive h3.year,
+.rsidebar .eco-archive h3.month, 
+.lsidebar .eco-archive h3.month, 
+.rsidebar .eco-archive h3.year, 
+.lsidebar .eco-archive h3.year{
+    font-family:'Open Sans', arial,helvetica,clean,sans-serif;
+    font-weight:700;
+}
+/**
+ * letter-spacing
+ *
+ *
+ *
+ */
+.pagetitle,
+.entry-title,
+.h1:not(h1),
+h1,
+.h2:not(h2),
+h2{
+
+     font-family: 'Playfair Display', serif;
+
+}
+
+.h6:not(h6),
+h6,
+.h3:not(h3),
+h3,
+.h4:not(h4),
+h4{
+  	
+}
+.h5:not(h5),
+h5{
+    
+}
+#site-title{
+   
+}
+/**
+ * Font Size
+ *
+ *
+ *
+ */ 
+h2 a.rsswidget,
+.h6:not(h6),
+h6,
+.f10{
+    font-size:77%;
+}
+.portfolio .index > li .entry-title a,
+sub, sup,
+.px11,
+small,
+.h5:not(h5),
+h5,
+.f11 {
+    font-size:85%;
+}
+.gallery .gallery-caption,
+.f12 {
+    font-size:93%;
+}
+.wp-caption p.wp-caption-text,
+/*#access .menu-header,*/
+div.menu,
+p,
+.h4:not(h4),
+h4,
+.f13 {
+    font-size:100%;
+}
+.px14,
+big,
+.f14 {
+    font-size:108%;
+}
+.px15,
+.f15 {
+    font-size:116%;
+}
+.date table .entry-title,
+.px16,
+.h3:not(h3),
+h3,
+.lsidebar h2,
+.rsidebar h2,
+.f16 {
+    font-size:123.1%;
+}
+.lsidebar h2,
+.rsidebar h2{
+    font-size:16px;/* if( $raindrops_base_font_size customized ) { over flow list area }*/
+}
+.px17,
+.f17 {
+    font-size:131%;
+}
+.author .entry-title,
+.px18,
+.f18 {
+    font-size:138.5%;
+}
+.px19,
+.f19 {
+    font-size:146.5%;
+}
+#archives-title,
+.h2:not(h2),
+h2,
+.f20 {
+    font-size:153.9%;
+}
+#ft .widgettitle{
+    font-size:20px;/* if( $raindrops_base_font_size customized ) { overflow list area }*/
+}
+h2.year-month-date .day-name,
+.year .year-name,
+h2.year-month .month-name,
+.f21 {
+    font-size:161.6%;
+}
+.f22 {
+    font-size:167%;
+}
+.f23 {
+    font-size:174%;
+}
+.f24 {
+    font-size:182%;
+}
+.f25 {
+    font-size:189%;
+}
+.h1:not(h1),
+h1,
+.f26 {
+    font-size:197%;
+}
+
+#header-image p{
+    font-size:2vw;
+   
+}
+.sticky-single-follow-text{
+    font-size:230.7%;
+}
+
+#site-title{
+    letter-spacing: 0.03em;	
+}
+.ie8 #site-title{
+    font-size:236.8%;
+}
+.pagetitle{
+    font-size:230.7%;
+}
+.entry-title{
+    font-size:230.7%;
+}
+
+.yui-t1 #wp-calendar caption,
+.yui-t1 #wp-calendar td{
+    font-size:0.61538461538em;
+}
+.yui-t4 #wp-calendar td,
+.yui-t4 #wp-calendar caption,
+.yui-t2 #wp-calendar td{
+    font-size:0.84615384615em;
+}
+.yui-t5 #wp-calendar caption,
+.yui-t5 #wp-calendar td{
+    font-size:1.07692307692em;
+}
+.yui-t3 #wp-calendar caption,
+.yui-t6 #wp-calendar caption,
+.yui-t3 #wp-calendar td,
+.yui-t6 #wp-calendar td{
+}
+.datetable .time,
+.datetable .month-name,
+.datetable .year-name,
+.datetable .day-name{
+    font-size:1.23076923077em;
+}
+.datetable .time,
+.datetable .month-name,
+.datetable .year-name,
+.datetable .day-name,
+.entry-content cite,
+var,
+em,
+.entry-content cite {
+    font-style:italic;
+}
+.ja em{
+    font-style:normal;
+}
+/**
+ * Font Weight
+ *
+ *
+ *
+ */
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3{
+    /*font-weight:bold;
+    raindrops 1.132 change font-weight*/
+    font-weight:normal;
+}
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6{
+    font-weight:400;
+}
+.attachment .title,
+strong,
+th,
+.pagenate a:hover,
+em,
+dt,
+.entry-content table caption,
+.post-format-status-publish-date,
+.category-blog-publish-date,
+.portfolio-nav-current,
+.post-format-text,
+.current-post > a,
+.current_page_item > a,
+.current-menu-item > a{
+    font-weight:bold;
+}
+.raindrops-comment-link em {
+    font-style: normal;
+}
+.portfolio ul.index > li article .entry-title,
+.portfolio ul.index > .loop-item-show-allways article .entry-title{
+    font-size:153.9%;
+}
+#ft .raindrops-monthly-archive-prev-next-avigation{
+    position:relative;
+}
+#ft .raindrops-monthly-archive-prev-next-avigation .year{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    width:4em;
+    height:1em;
+    text-align:center;
+    padding: 3px 0;
+}
