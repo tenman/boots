@@ -29,6 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.303
+	Raindrops theme, so far the characteristics of boots, now all can be achieved.
+	In this change, review the features of boots, it was made a major improvement.
 var:1.285.2
 	Fixed for Security issue.
 		https://make.wordpress.org/plugins/2015/04/20/fixing-add_query_arg-and-remove_query_arg-usage/
