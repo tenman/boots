@@ -1,0 +1,187 @@
+/**
+ * Raindrops Langueges Style Rules for Japanese (ja)
+ * 
+ * Filetype: CSS
+ * @package Raindrops
+ */
+body.ja{
+    font-family: 'Noto Sans Japanese', 'Meiryo',Arial,sans-serif;
+    font-weight:200;
+}
+.ja .archive .page-title,
+.ja .raindrops-monthly-archive-prev-next-avigation a,
+.ja .rsidebar .widget .post-group_by-category-title a,
+.ja .rsidebar .widget .post-group_by-category-title,
+.ja .lsidebar .widget .post-group_by-category-title a,
+.ja .lsidebar .widget .post-group_by-category-title,
+.ja .widget_recent-post-groupby-cat h2,
+.ja .widget_recent-post-groupby-cat h3,
+.ja .commentlist .pingback p,
+.ja .commentlist .comment-body,
+.ja .commentlist .reply,
+.ja .commentlist .raindrops-comment-author-meta,
+.ja .commentlist .comment-meta,
+.ja .datetable .time,
+.ja .datetable .month-name,
+.ja .datetable .year-name,
+.ja .datetable .day-name,
+.ja .form-allowed-tags,
+.ja .footer-widget h2,
+.ja .rsidebar h2,
+.ja .lsidebar h2,
+.ja .widgettitle h2,
+.ja .widget-title h2,
+.ja h2.footer-content,
+.ja h4,
+.ja h5,
+.ja h6,
+.ja .h4,
+.ja .h5,
+.ja .h6{
+   font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;
+
+}
+.ja .widgettitle,
+.ja #archives-title .title,
+.ja .rsidebar .post-group_by-category-title a,
+.ja .rsidebar .post-group_by-category-title,
+.ja .lsidebar .post-group_by-category-title a,
+.ja .lsidebar .post-group_by-category-title,
+.ja.archive .page-title,
+.ja .raindrops-monthly-archive-prev-next-avigation a{
+    text-transform: none;
+}
+.ja var,
+.ja h1,
+.ja h2,
+.ja h3,
+.ja .h1,
+.ja .h2,
+.ja .h3{
+   font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;  
+}
+.ja .rd-type-boots .widgettitle{
+    font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;  
+    font-weight:700;
+    text-transform:none;    
+}
+.ja .pagetitle,
+.ja .entry-title,
+.ja .h1:not(h1),
+.ja h1,
+.ja .h2:not(h2),
+.ja h2{
+    font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;
+    font-weight:400;
+}
+
+.ja .entry-content h4,
+.ja .entry-content h5,
+.ja .entry-content h6,
+.ja .entry-content h1,
+.ja .entry-content h2,
+.ja .entry-content h3,
+.ja .entry-content .h4,
+.ja .entry-content .h5,
+.ja .entry-content .h6,
+.ja .entry-content .h1,
+.ja .entry-content .h2, 
+.ja .entry-content .h3{
+       margin:1.6em 0;   
+}
+/* Raindrops new h1-h6 font size from ver 0.996 start */
+
+.ja #site-title{
+	font-size:197%;
+}
+.ja .entry-title{
+	font-size:146.5%;
+       font-weight:400;
+}
+.ja .lsidebar h2,
+.ja .rsidebar h2{
+	font-size:108%;
+}
+.ja .h1:not(h1),
+.ja h1{
+	font-size:161.6%;
+}
+.ja .h2:not(h2),
+.ja h2{
+	font-size:138.5%;
+}
+.ja .h3:not(h3),
+.ja h3{
+	font-size:116%;
+}
+.ja .h4:not(h4),
+.ja h4{
+	font-size:100%;
+}
+.ja .h5:not(h5),
+.ja h5{
+	font-size:85%;
+}
+.ja .h6:not(h6),
+.ja h6{
+	font-size:xx-small;
+}
+/* Raindrops new h1-h6 font size from ver 0.996 end */ 
+.ja .footer-widget h2,
+.ja .rsidebar h2,
+.ja .lsidebar h2,
+.ja .widgettitle h2,
+.ja h2.footer-content {
+	height:17px;
+	text-indent:.5em;
+	font-size:108%;
+	padding:5px 0;
+}
+.ja .author .entry-title{
+	display:inline-block;
+	font-size:123.1%;
+	margin-left:.6em;
+}
+.ja main .author .h2-thumb img{
+	width:24px;
+	height:24px;
+}
+.ja.date table .entry-title{
+	font-size:108%;
+
+	font-family:arial,helvetica,clean,sans-serif;
+	
+}
+.ja.date .entry-title{
+
+	font-family:arial,helvetica,clean,sans-serif;
+}
+.ja #list-of-post ol .entry-title{
+
+	font-size:197%;
+	font-family:arial,helvetica,clean,sans-serif;
+}
+
+.ja em{
+        font-weight:bold;
+}
+.ja i{
+        font-style: italic;
+}
+.ja p{
+    line-height:1.6;
+}
+.ja .datetable .time,
+.ja .datetable .month-name, 
+.ja .datetable .year-name, 
+.ja .datetable .day-name{
+
+}
+.ja .rsidebar .eco-archive li,
+.ja .lsidebar .eco-archive li{
+    display:inline-block;
+    border:none;
+    min-width:13%;
+    margin:1%;
+    box-sizing:border-box;
+}
