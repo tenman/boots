@@ -1,7 +1,7 @@
 /*
 Theme Name: boots
 Theme URI: http://www.tenman.info/wp3/boots
-Description: header and footer full width Child theme of Raindrops. This theme has been taken into account so we have complete control in the child theme of various functions of Raindrops theme.
+Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
 Version: 1.303
@@ -19,12 +19,7 @@ Template: raindrops
 @import url( ../raindrops/childs/boots/base.css );
 
 
-.menu-header{
-    border:1px solid transparent
-}
-#access .menu{
-    border:1px solid transparent;
-}
+
 .rsidebar .eco-archive .month a,
 .lsidebar .eco-archive .month a,
 .rsidebar .eco-archive .year a,
@@ -92,7 +87,7 @@ Template: raindrops
     min-height:100px;
 }
 header#top{
-    background:transparent;
+   
 }
 #header-inner{
     text-align:left;
@@ -106,6 +101,9 @@ header#top{
 #bd{
     margin-top:3px;
     margin-bottom:8px;
+}
+#calendar_wrap td{
+    height:auto;
 }
 /** ALL COLOR TYPES
  * FOOTER
@@ -152,7 +150,7 @@ address{
     text-align:left;
 }
 .rd-type-minimal #ft{
-    background:url( images/footer.png );
+  /*  background:url( images/footer.png );*/
 }
 /** ALL COLOR TYPES
  *
@@ -211,10 +209,11 @@ address{
     width: 9.9%
 }
 
-#access{
-    position:relative;
-}
+
 #page-top span{
+    position:absolute;
+    top:0;
+    right:42px;
     display:inline-block;
     width:24px;
     height:24px;
@@ -231,7 +230,7 @@ address{
     margin-top:.5em;
     position:absolute;
     right:10px;
-    top:-50px;
+    top:0;
 }
 .pagination{
     font-size:123%;
@@ -244,12 +243,25 @@ address{
 .pagination .next{
     border:none;
 }
-
+.pagenate{
+    position:relative;
+}
+.pagenate a span,
+.pagenate span{
+    display:inline-block;
+    font-size:1em;
+    line-height:1;
+    width:2em;
+    height:2em;
+    padding:.5em;
+    text-align:center;
+    box-sizing:border-box;
+}
 .sticky-widget #wp-calendar tfoot td,
 .sticky-widget #wp-calendar th{
     border:none!important;
 }
-.sticky-widget #wp-calendar #prev,
+
 .sticky-widget #wp-calendar tbody #today{
     background:#efefef;
 }
@@ -286,7 +298,9 @@ address{
     padding:2em 1em 0;
     box-sizing:border-box;
 }
-
+.raindrops-sticky{
+    margin:0 1em;
+}
 .raindrops-sticky .sticky-single-follow-text.anytime a{
     display:inline-block;
     font-size:100%;
@@ -476,8 +490,7 @@ body.rd-type-boots{
 .rd-type-boots .attachment-navigation .prev a{
     background:none;
 }
-.nocomments,
-.entry-meta .this-posted-in,
+
 .rd-type-boots address .comments-rss:after,
 .rd-type-boots address .entry-rss:after,
 .rd-type-boots #comments .form-allowed-tags:before,
@@ -491,8 +504,9 @@ body.rd-type-boots{
 }
 
 @media screen and (max-width : 640px){
-
-
+    
+    #top #header-image .tagline, 
+    #top #header-image #site-title{font-size:20px;}
 
     #boots .lsidebar,
     #boots .rsidebar{
@@ -507,24 +521,14 @@ body.rd-type-boots{
     #yui-main .yui-u .lsidebar{
         min-height:0!important;
     }
-    .rd-type-boots #access a{
-        text-align:left;
-        color:#fff;
-    }
-    .rd-type-boots #access li{
-     /*   background:transparent;*/
-        background:#000;
-        padding-left:1em;
-    }
+ 
+
     .rd-type-boots .raindrops-mobile-menu{
       position:relative;
       top:0;
       z-index:9999;
     }
-    .rd-type-boots #access{
 
-        padding-bottom:1em;
-    }
     .rd-type-boots #ft .footer-widget {
         float:none;
         margin:0;
@@ -601,7 +605,7 @@ body.rd-type-boots{
     .rd-col-1 .index article{
         overflow:hidden;
     }
-
+/*
     .child-boots #access .children a,
     .child-boots #access .sub-menu a{
         border-bottom:1px solid rgba(222,222,222,.3);
@@ -624,11 +628,12 @@ body.rd-type-boots{
         visibility:visible;
         opacity:1;
         transition-delay:0s;
-    }
+    }*/
 
     #nav-above{
         display:none;
     }
+
     #access.boots-menu-fixed{
         position:fixed;
         z-index:99999;
@@ -653,8 +658,8 @@ body.rd-type-boots{
     a#page-top:hover{
         cursor:pointer;
     }
-    .rd-type-boots #access.boots-menu-fixed{
-        background:#fff;
+    .boots-menu-fixed .menu-header{
+        
     }
     .rsidebar .eco-archive li, .lsidebar .eco-archive li {
         display: inline-block;
@@ -670,9 +675,7 @@ body.rd-type-boots{
 
 }
 
-.rd-type-minimal #access{
-    background:#fff;
-}
+
 .rd-type-boots .rsidebar > ul > li:not(.widget_recent_comments),
 .rd-type-boots .lsidebar > ul > li:not(.widget_recent_comments){
 
@@ -681,13 +684,16 @@ body.rd-type-boots{
 .rd-type-boots .lsidebar .widget_recent_comments li{
     overflow:auto;
 }*/
+#archives-title{
+    padding-top:1em;
+}
 .rd-type-boots #archives-title .label{
     display:none;
 }
 .single.rd-type-boots .entry-content{
     min-height:180px;
 }
-.rd-type-boots #access,
+
 .rd-type-boots #hd,
 .rd-type-boots #bd{
     background:#fff;
@@ -696,6 +702,7 @@ body.rd-type-boots{
     width:100%;
     margin:0 0 -8px;
 }
+
 .rd-type-boots .rsidebar ul li ul li,
 .rd-type-boots .lsidebar ul li ul li{
     padding-top:.7em;
@@ -713,6 +720,9 @@ body.rd-type-boots{
     padding:0.38461538461em;
     display:inline-block;
 }
+#nav-above-comments{
+    padding-bottom:1.5em;
+}
 #nav-below-comments .nav-next a,
 #nav-below-comments .nav-previous a,
 #nav-above-comments .nav-next a,
@@ -723,9 +733,13 @@ body.rd-type-boots{
     -moz-border-radius:0.38461538461em;
     padding:0.38461538461em;
 }
+
 #comments .pingback a{
     display:inline-block;
     margin:0 1em;
+}
+.raindrops-excerpt-more{
+    text-align:center;
 }
 .rd-type-boots .raindrops-excerpt-more .meta-nav,
 .rd-type-boots .more-link .meta-nav{
@@ -816,7 +830,19 @@ body.rd-type-boots{
     padding:0;
 }
 .comment-edit-link{
-    margin-left:1em;
+    margin-left:.5em;
+    padding:.2em .3em;
+}
+#comments-title{
+    margin-top:2em;
+    font-weight:bold;
+}
+figure[id^=attachment] figcaption{
+   padding:1em;
+   margin:1%;
+}
+figcaption:empty{
+    display:none;
 }
 .rd-type-boots hr{
     border: 0;
@@ -836,4 +862,112 @@ body.rd-type-boots{
     border-bottom: 1px solid #eee;
     width:80%;
     margin:auto auto 1em;
+}
+#nav-below{
+    position:relative;
+    top:2em;
+}
+#nav-below .nav-next a,
+#nav-below .nav-previous a,
+#nav-below .nav-next,
+#nav-below .nav-previous{
+    text-align: center;
+    padding: 1em;
+    box-sizing:border-box;
+}
+#nav-below .nav-next a,
+#nav-below .nav-previous a{
+    display:block;
+}
+#nav-below .nav-next:empty,
+#nav-below .nav-previous:empty{
+    display:none;
+}
+.rd-type-boots #wp-calendar tfoot #next a,
+.rd-type-boots #wp-calendar tfoot #prev a{
+        display:inline-block;
+        text-align:center;
+        text-decoration:none;
+        padding:.5em;
+        margin:.5em;
+}
+.widgettitle.footer-widget{
+    margin:1px;
+}
+#ft .footer-widget .widgettitle{
+        padding:.6em .6em 1em;
+        box-sizing:border-box;
+}
+.rd-type-boots .rsidebar .widget .widgettitle,
+.rd-type-boots .lsidebar .widget .widgettitle{
+        padding:.6em .6em 1em;
+        margin-left:-5px;
+}
+.page.rd-col-1 div[class^="entry-meta"],
+.page.rd-col-1 .entry-title,
+.single.rd-col-1 div[class^="entry-meta"],
+.single.rd-col-1 .entry-title{
+    text-align:center;
+}
+.page.rd-col-1 .entry-title,
+.single.rd-col-1 .entry-title{
+    margin:1em 0;
+}
+
+.rd-type-boots.rd-pw-doc3.rd-col-1 .fail-search,
+.rd-type-boots.rd-pw-doc5.rd-col-1 .fail-search{
+    position: relative; 
+    padding-bottom: 32%; 
+    height: 0;
+}
+div[class^="entry-meta"] .author .avatar,
+.posted-on .author .avatar{
+    width:2em;
+    height:2em;
+}
+
+#top #access > div.menu > ul > li  li, #top #access .menu > li li{
+    width: 100%;
+    display: block;
+    padding:0;
+    box-sizing: border-box;  
+}
+.comment-body .my-icon:hover:before{
+
+   /* content:url(attr(data-url));*/
+}
+.my-icon{
+    background:lightblue;
+    padding:15px;
+    margin:15px;
+    position: relative;
+}
+
+.my-icon:hover:after {
+    position: absolute;
+    content:attr(data-url);
+    left:0;
+    top:0;
+    width:200px;
+    height:1.25rem;
+    background-color: blue;
+    color:white;
+}
+
+.comment-body blockquote {
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  border:1px solid rgba( 127,127,127,.3);
+}
+.comment-body blockquote:before {
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    height:36px;
+}
+#top #header-image{
+    background-position:center;
 }

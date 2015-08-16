@@ -13,7 +13,7 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
     </head>
     <body <?php body_class(); ?>>
 		<?php if ( raindrops_warehouse( 'raindrops_disable_keyboard_focus' ) == 'enable' ) { ?>	
-        <div class="skip-link"><a href="#container" class="screen-reader-text" title="<?php esc_attr_e( 'Skip to content', 'Raindrops' ); ?>"><?php esc_html_e( 'Skip to content', 'Raindrops' ); ?></a></div><?php echo raindrops_skip_links(); ?>
+        <div class="skip-link"><a href="#container" class="screen-reader-text" title="<?php esc_attr_e( 'Skip to content', 'boots' ); ?>"><?php esc_html_e( 'Skip to content', 'boots' ); ?></a></div><?php echo raindrops_skip_links(); ?>
 		<?php } // raindrops_disable_keyboard_focus ?>
         <?php
         raindrops_prepend_doc();
@@ -34,10 +34,12 @@ do_action( 'raindrops_pre_part_' . basename( __FILE__, '.php' ) . '_' . basename
                 /**
                  * horizontal menubar
                  */
-                raindrops_nav_menu_primary();
+				if ( has_nav_menu( 'primary' ) ) {
+					raindrops_nav_menu_primary( array('fallback_cb' => '',) );
+				}
 				?>   
 				</div>
-			</div>  <?php raindrops_after_nav_menu(); ?>
+			</div>  <?php raindrops_after_nav_menu( ); ?>
         </header>
         <div id="<?php echo esc_attr( raindrops_warehouse( 'raindrops_page_width' ) ); ?>" class="<?php echo esc_attr( 'yui-' . raindrops_warehouse( 'raindrops_col_width' ) ); ?> hfeed">
             <div id="bd" class="clearfix">

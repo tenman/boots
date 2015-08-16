@@ -21,6 +21,7 @@ google-font-playfair-display-sc
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Black+Ops+One);
 body{
     font:13px 'Open Sans', arial,helvetica,clean,sans-serif;
     line-height:1.231;
@@ -196,9 +197,7 @@ h4{
 h5{
     
 }
-#site-title{
-   
-}
+
 /**
  * Font Size
  *
@@ -421,3 +420,19 @@ dt,
     text-align:center;
     padding: 3px 0;
 }
+body:not(.ja) .raindrops-sticky .entry-title{
+    font-family: 'Black Ops One', cursive;
+    text-transform:uppercase;
+}
+body:not(.ja) .raindrops-sticky .entry-content{
+    font-family: 'Playfair Display', serif;
+}
+.ja .raindrops-sticky .entry-title{
+    font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:800;
+}
+.ja .raindrops-sticky .entry-content{
+    font-family:'Noto Sans Japanese','Meiryo',Arial,sans-serif;
+}
+
