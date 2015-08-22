@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.303
+Version: 1.316
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -87,7 +87,7 @@ Template: raindrops
     min-height:100px;
 }
 header#top{
-   
+
 }
 #header-inner{
     text-align:left;
@@ -290,10 +290,43 @@ address{
 .entry-content blockquote p {
     display: inline;
 }
-.entry-content table th,
-.entry-content table td {
-    padding:1em 0;
+/* Basic Table Style */
+.entry-content table{
+     margin:2em 0;
 }
+.entry-content td{
+    text-align:center;
+}
+.entry-content td.right,
+.entry-content .right td{
+    text-align:right;
+}
+.entry-content  td.left,
+.entry-content .left td{
+    text-align:left;
+}
+.entry-content td.center,
+.entry-content .center td{
+    text-align:center;
+}
+.entry-content td.bottom,
+.entry-content .bottom td{
+    text-align:right;
+}
+.entry-content  td.top,
+.entry-content .top td{
+    text-align:left;
+}
+.entry-content td.middle,
+.entry-content .middle td{
+    text-align:center;
+}
+.entry-content th,
+.entry-content td {
+    padding:1em 0;
+    text-align:center;
+}
+/*--------------*/
 #doc5 .static-front-content{
     padding:2em 1em 0;
     box-sizing:border-box;
@@ -504,8 +537,8 @@ body.rd-type-boots{
 }
 
 @media screen and (max-width : 640px){
-    
-    #top #header-image .tagline, 
+
+    #top #header-image .tagline,
     #top #header-image #site-title{font-size:20px;}
 
     #boots .lsidebar,
@@ -521,7 +554,7 @@ body.rd-type-boots{
     #yui-main .yui-u .lsidebar{
         min-height:0!important;
     }
- 
+
 
     .rd-type-boots .raindrops-mobile-menu{
       position:relative;
@@ -659,7 +692,7 @@ body.rd-type-boots{
         cursor:pointer;
     }
     .boots-menu-fixed .menu-header{
-        
+
     }
     .rsidebar .eco-archive li, .lsidebar .eco-archive li {
         display: inline-block;
@@ -911,13 +944,17 @@ figcaption:empty{
 }
 .page.rd-col-1 .entry-title,
 .single.rd-col-1 .entry-title{
-    margin:1em 0;
-}
+    margin:0 0 1em 0;
 
+}
+.page.rd-col-1 .entry-title span,
+.single.rd-col-1 .entry-title span{
+    padding-top:0;
+}
 .rd-type-boots.rd-pw-doc3.rd-col-1 .fail-search,
 .rd-type-boots.rd-pw-doc5.rd-col-1 .fail-search{
-    position: relative; 
-    padding-bottom: 32%; 
+    position: relative;
+    padding-bottom: 32%;
     height: 0;
 }
 div[class^="entry-meta"] .author .avatar,
@@ -930,7 +967,7 @@ div[class^="entry-meta"] .author .avatar,
     width: 100%;
     display: block;
     padding:0;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 .comment-body .my-icon:hover:before{
 

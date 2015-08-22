@@ -940,4 +940,4 @@ if ( isset( $raindrops_child_base_setting_args ) && !empty( $raindrops_child_bas
 		boots_options_field_owner_check();
 	}
 	$raindrops_base_setting = $raindrops_child_base_setting_args;
-}
+}?>

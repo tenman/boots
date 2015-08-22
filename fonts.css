@@ -23,7 +23,8 @@ google-font-playfair-display-sc
 @import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Black+Ops+One);
 body{
-    font:13px 'Open Sans', arial,helvetica,clean,sans-serif;
+    /*font:13px 'Open Sans', arial,helvetica,clean,sans-serif;*/
+    font:16px 'Open Sans', arial,helvetica,clean,sans-serif;
     line-height:1.231;
    
         text-transform:none;
