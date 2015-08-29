@@ -1,20 +1,20 @@
 <?php
-/** Theme base font size 
- * 
+/** Theme base font size
+ *
  * default 15  means 15px
  */
 $raindrops_base_font_size			= 15;
 /**
  * Enabling accessibility links when Setting value no at Raindrops options page Accessibility Settings
- * 
- * 
+ *
+ *
  * @since1.217
  */
 $raindrops_accessibility_link       = false;
 /**
  * Display Status Bar
- * 
- * 
+ *
+ *
  * @since1.217
  */
 $raindrops_status_bar               = false;
@@ -34,7 +34,7 @@ $raindrops_page_width               = '';
  */
 
 if ( !isset( $raindrops_child_base_setting_args ) ) {
-	
+
 	$raindrops_child_base_setting_args = array(
 		array( 'option_id'		 => 1,
 			'blog_id'		 => 0,
@@ -631,13 +631,13 @@ One is a method of up-loading the image from the below up-loading form. Another 
 			'list'			 => 57 ),
 		array( 'option_id'		 => 59,
 			'blog_id'		 => 0,
-			'option_name'	 => "raindrops_sidebar_catetory",
+			'option_name'	 => "raindrops_sidebar_category",
 			'option_value'	 => 1,
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Category Archive columns', 'Raindrops' ),
 			'excerpt1'		 => '',
 			'excerpt2'		 => esc_html__( 'value 1-3. default 3', 'Raindrops' ),
-			'validate'		 => 'raindrops_sidebar_catetory_validate',
+			'validate'		 => 'raindrops_sidebar_category_validate',
 			'list'			 => 58 ),
 		array( 'option_id'		 => 60,
 			'blog_id'		 => 0,
@@ -647,7 +647,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 			'title'			 => esc_html__( 'Category Archive columns', 'Raindrops' ),
 			'excerpt1'		 => '',
 			'excerpt2'		 => esc_html__( 'value 1-3. default 3', 'Raindrops' ),
-			'validate'		 => 'raindrops_sidebar_catetory_validate',
+			'validate'		 => 'raindrops_sidebar_author_validate',
 			'list'			 => 59 ),
 		array( 'option_id'		 => 61,
 			'blog_id'		 => 0,
