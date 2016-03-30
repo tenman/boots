@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.316.2
+Version: 1.356
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,14 +12,10 @@ Template: raindrops
 */
 /** ALL COLOR TYPES
  * Common Styles
- *
- *
  */
-
-@import url( ../raindrops/childs/boots/base.css );
-
-
-
+#top #header-image{
+    min-height:0;
+}
 .rsidebar .eco-archive .month a,
 .lsidebar .eco-archive .month a,
 .rsidebar .eco-archive .year a,
@@ -209,29 +205,6 @@ address{
     width: 9.9%
 }
 
-
-#page-top span{
-    position:absolute;
-    top:0;
-    right:42px;
-    display:inline-block;
-    width:24px;
-    height:24px;
-    background:url( images/go-top.png );
-    background-size:contain;
-   margin-top:.5em
-}
-#desmiss span{
-    display:inline-block;
-    width:24px;
-    height:24px;
-    background:url( images/desmiss.png );
-    background-size:contain;
-    margin-top:.5em;
-    position:absolute;
-    right:10px;
-    top:0;
-}
 .pagination{
     font-size:123%;
 }
@@ -556,12 +529,6 @@ body.rd-type-boots{
     }
 
 
-    .rd-type-boots .raindrops-mobile-menu{
-      position:relative;
-      top:0;
-      z-index:9999;
-    }
-
     .rd-type-boots #ft .footer-widget {
         float:none;
         margin:0;
@@ -638,52 +605,9 @@ body.rd-type-boots{
     .rd-col-1 .index article{
         overflow:hidden;
     }
-/*
-    .child-boots #access .children a,
-    .child-boots #access .sub-menu a{
-        border-bottom:1px solid rgba(222,222,222,.3);
-    }
-    .child-boots #access ul li ul,
-    .child-boots #access ul li:hover ul ul,
-    .child-boots #access ul ul li:hover ul ul,
-    .child-boots #access ul ul ul li:hover ul ul,
-    .child-boots #access ul ul ul ul li:hover ul ul {
-        visibility:hidden;
-        opacity:0;
-        transition:visibility 0s linear 0.5s,opacity 0.5s linear;
-        z-index: 9999;
-    }
-    .child-boots #access ul li:hover ul,
-    .child-boots #access ul ul li:hover ul,
-    .child-boots #access ul ul ul li:hover ul,
-    .child-boots #access ul ul ul ul li:hover ul,
-    .child-boots #access ul ul ul ul ul li:hover ul {
-        visibility:visible;
-        opacity:1;
-        transition-delay:0s;
-    }*/
 
     #nav-above{
         display:none;
-    }
-
-    #access.boots-menu-fixed{
-        position:fixed;
-        z-index:99999;
-        top:0;
-        left:0;
-        display: block;
-        float: left;
-        width: 100%;
-        margin-left: 0;
-        margin-top: 0;
-        -webkit-box-shadow: 0px 4px 8px 0px rgba(155, 157, 157, 0.75);
-        -moz-box-shadow:    0px 4px 8px 0px rgba(155, 157, 157, 0.75);
-        box-shadow:         0px 4px 8px 0px rgba(155, 157, 157, 0.75);
-
-    }
-    .admin-bar #access.boots-menu-fixed{
-        top:32px;
     }
     a#page-top{
         display:inline-block;
@@ -691,9 +615,7 @@ body.rd-type-boots{
     a#page-top:hover{
         cursor:pointer;
     }
-    .boots-menu-fixed .menu-header{
 
-    }
     .rsidebar .eco-archive li, .lsidebar .eco-archive li {
         display: inline-block;
         margin: 0 1% 0;
@@ -713,28 +635,20 @@ body.rd-type-boots{
 .rd-type-boots .lsidebar > ul > li:not(.widget_recent_comments){
 
 }
-/*
-.rd-type-boots .lsidebar .widget_recent_comments li{
-    overflow:auto;
-}*/
+
 #archives-title{
     padding-top:1em;
 }
 .rd-type-boots #archives-title .label{
     display:none;
 }
-.single.rd-type-boots .entry-content{
-    min-height:180px;
-}
+
 
 .rd-type-boots #hd,
 .rd-type-boots #bd{
     background:#fff;
 }
-.rd-type-boots #access{
-    width:100%;
-    margin:0 0 -8px;
-}
+
 
 .rd-type-boots .rsidebar ul li ul li,
 .rd-type-boots .lsidebar ul li ul li{
@@ -793,10 +707,7 @@ body.rd-type-boots{
     white-space:normal;
 }
 
-.raindrops-mobile-menu:target {
 
-    background-color: #000;
-}
 .rd-type-boots #recentcomments a{
     width:auto;
 }
@@ -963,16 +874,6 @@ div[class^="entry-meta"] .author .avatar,
     height:2em;
 }
 
-#top #access > div.menu > ul > li  li, #top #access .menu > li li{
-    width: 100%;
-    display: block;
-    padding:0;
-    box-sizing: border-box;
-}
-.comment-body .my-icon:hover:before{
-
-   /* content:url(attr(data-url));*/
-}
 .my-icon{
     background:lightblue;
     padding:15px;
@@ -1007,4 +908,36 @@ div[class^="entry-meta"] .author .avatar,
 }
 #top #header-image{
     background-position:center;
+}
+.rd-type-boots #access.raindrops-menu-fixed .menu > li > a{
+      color:#333;
+}
+
+.rd-type-boots #access.raindrops-menu-fixed .menu-header{
+    background:rgba(255,255,255,.8);
+    border-bottom:1px solid #ccc;
+}
+.rd-type-boots #access.raindrops-menu-fixed .menu-header{
+    max-width:none;
+}
+.rd-type-boots #doc5.yui-t6 #container > .first > div, 
+.rd-type-boots #doc5.yui-t5 #container > .first > div, 
+.rd-type-boots #doc5.yui-t4 #container > .first > div{
+    margin:auto;
+}
+
+.link-to-sidebar-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px dotted #ccc;
+  height:480px;
+  flex-direction:column;
+}
+.link-to-sidebar-settings > div {
+  max-width: 80%;
+  text-align:center;
+}
+.rd-type-boots .raindrops-monthly-archive-prev-next-avigation .year{
+   padding-top:2em;
 }

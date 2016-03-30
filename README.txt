@@ -29,7 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
-
+var:1.356
+        Parent Raindrops 1.356 relate changes
+        Change default. default sidebar, extra sidebar
 var:1.316.2
 	Fixed Fatal Error with Raindrops 1.319
 var:1.316

@@ -4,6 +4,7 @@
  * Filetype: CSS
  * @package Raindrops
  */
+@import url("../../../raindrops/languages/css/ja.css");
 body.ja{
     font-family: 'Noto Sans Japanese', 'Meiryo',Arial,sans-serif;
     font-weight:200;
