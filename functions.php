@@ -122,8 +122,8 @@ if ( ! function_exists('raindrops_sidebar_menus') ) {
 				echo '<li><div class="link-to-sidebar-settings">';
 				echo '<div>
 					<h3>Default Sidebar</h3>
-					<a href="'.admin_url('widgets.php').'">'. __('Set Widgets', 'boots' ). '</a><br />or</br />
-					<a href="'.admin_url('customize.php?autofocus[section]=raindrops_theme_settings_sidebar').'">'. __('Change Columns', 'boots' ). '</a>	
+					<a href="'.admin_url('widgets.php').'">'. __('Set Widgets', 'raindrops' ). '</a><br />or</br />
+					<a href="'.admin_url('customize.php?autofocus[section]=raindrops_theme_settings_sidebar').'">'. __('Change Columns', 'raindrops' ). '</a>	
 				</div>';
 				
 				echo '</div></li>';
@@ -135,9 +135,9 @@ if ( ! function_exists('raindrops_sidebar_menus') ) {
 			echo '<li><div class="link-to-sidebar-settings">';
 				echo '<div>
 					<h3>Extra Sidebar</h3>
-					<a href="'.admin_url('widgets.php').'">'. __('Set Widgets', 'boots' ). '</a>
+					<a href="'.admin_url('widgets.php').'">'. __('Set Widgets', 'raindrops' ). '</a>
 						<br />or</br />
-					<a href="'.admin_url('widgets.php').'">'. __('Change Columns', 'boots' ). '</a>	
+					<a href="'.admin_url('widgets.php').'">'. __('Change Columns', 'raindrops' ). '</a>	
 				</div>';
 				echo '</div></li>';
 				
