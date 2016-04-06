@@ -29,6 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.400
+	Raindrops Theme 1.400 relate change
+	$raindrops_base_setting_args array structure change. to associative array
 var:1.356.1
         Parent Raindrops 1.356 relate changes
         Change default. default sidebar, extra sidebar

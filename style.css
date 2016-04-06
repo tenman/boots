@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.356.1
+Version: 1.400
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -601,6 +601,35 @@ body.rd-type-boots{
     #doc3 #container.yui-gc > .yui-u:not(.first){
         width:100%;
     }
+    .rd-type-boots .index{
+        width:90vw;
+        margin:auto;
+        
+    }
+    .rd-type-boots.rd-pw-doc5.rd-col-1 .index li article{
+        margin:0;
+        padding:0;
+    }
+    .rd-type-boots .sticky{
+       padding:0;
+       width:90vw;
+    }
+    .rd-type-boots .sticky .entry-content{
+        padding:1em;
+        box-sizing:border-box;
+    }
+    .rd-type-boots .blog .sticky .entry-title a, 
+    .rd-type-boots #doc5 .sticky .entry-title a{
+        width:100%;
+    }
+    .rd-type-boots .entry-content{
+        
+        width:100%;
+    }
+    .rd-type-boots .entry-content ul{
+        position:static;
+        width:90vw;
+    }
 }
 @media screen and (min-width : 641px){
     .rd-col-1 .index article{
@@ -753,7 +782,7 @@ body.rd-type-boots{
 }
 .footer-widget .rsswidget img{
     display:inline;
-    border:1px solid red;
+    
 }
 .page.rd-col-1 #bd,
 .page.rd-col-1 .yui-g,
@@ -915,7 +944,7 @@ div[class^="entry-meta"] .author .avatar,
 }
 
 .rd-type-boots #access.raindrops-menu-fixed .menu-header{
-    background:rgba(255,255,255,.8);
+    background:rgba(255,255,255,.9);
     border-bottom:1px solid #ccc;
 }
 .rd-type-boots #access.raindrops-menu-fixed .menu-header{
@@ -926,7 +955,10 @@ div[class^="entry-meta"] .author .avatar,
 .rd-type-boots #doc5.yui-t4 #container > .first > div{
     margin:auto;
 }
-
+#page-top{
+    display:inline;
+    float:right;
+}
 .link-to-sidebar-settings {
   display: flex;
   align-items: center;
@@ -934,6 +966,7 @@ div[class^="entry-meta"] .author .avatar,
   border:1px dotted #ccc;
   height:480px;
   flex-direction:column;
+  margin-right:1em;
 }
 .link-to-sidebar-settings > div {
   max-width: 80%;
