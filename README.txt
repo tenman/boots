@@ -29,6 +29,10 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.400.1
+	Fixed when database has raindrops_theme_settings field ( wp_options table )
+	The default setting for child theme is not applied correctly.
+Note:If a child theme has been uninstalled, child theme, does not continue to hold the option value
 var:1.400
 	Raindrops Theme 1.400 relate change
 	$raindrops_base_setting_args array structure change. to associative array

@@ -1,4 +1,4 @@
-<?php	
+<?php
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -6,26 +6,56 @@ include_once( get_theme_root() . '/raindrops/childs/inc.php');
 include_once( get_theme_root() . '/raindrops/childs/functions.php');
 include_once( get_stylesheet_directory() . '/config.php');
 
+add_action( 'raindrops_extend_style_type', 'boots_extend_style' );
+add_filter( 'wp_nav_menu_args', 'boots_remove_fallback_cb' );
+
+add_action( 'after_switch_theme', 'boots_install' );
+add_action( 'switch_theme', 'boots_uninstall' );
+
+function boots_install( $old ) {
+
+	global $parent_theme_settings, $raindrops_child_base_setting_args;
+
+	$check_existance_parent_theme_option = get_option( 'raindrops_theme_settings', 'not-exists' );
+
+	if ( 'not-exists' !== $check_existance_parent_theme_option ) {
+
+		set_theme_mod( 'parent_theme_settings', $parent_theme_settings );
+
+		foreach ( $raindrops_child_base_setting_args as $key => $val ) {
+			$validate = $key.'_validate';
+			update_option( $key,  $validate( $val[ 'option_value' ] )  );
+		}
+	}
+}
+
+function boots_uninstall() {
+
+	$restore_parent_settings = get_theme_mod( 'parent_theme_settings' );
+
+	foreach ( $restore_parent_settings as $key => $val ) {
+		$validate = $key.'_validate';
+		update_option( $key, $validate( $val[ 'option_value' ] ) );
+	}
+}
+
 /**
  * Setup
  */
 function raindrops_child_init() {
-	/* broad color type setting */
+
 	add_action( 'raindrops_include_after', 'boots_extend_styles' );
 	add_filter( 'body_class', 'boots_body_classes' );
-
 	add_filter( 'raindrops_nav_menu_primary_html', 'boots_hash_link_change' );
 	add_action( 'after_setup_theme', 'raindrops_child_init' );
-	add_filter('raindrops_base_setting_args', 'boots_base_setting_args');
+	add_filter( 'raindrops_base_setting_args', 'boots_base_setting_args' );
 }
-
-add_action( 'raindrops_extend_style_type', 'boots_extend_style' );
-add_filter( 'wp_nav_menu_args', 'boots_remove_fallback_cb' );
-add_action( 'switch_theme', 'boots_uninstall' );
 
 function boots_base_setting_args( $args ) {
+	
 	return $raindrops_child_base_setting_args;
 }
+
 /**
  * 
  * @param array $args
@@ -86,18 +116,6 @@ function boots_body_classes( $classes ) {
 	return apply_filters( 'boots_body_classes', $classes );
 }
 
-function boots_uninstall() {
-	global $parent_theme_settings;
-
-	update_option( 'raindrops_theme_settings', $parent_theme_settings );
-}
-
-/**
- * 
- * @global type $post
- * @global type $raindrops_wp_version
- * @param type $position
- */
 function raindrops_sidebar_menus( $position = 'default' ) {
 
 	global $post, $raindrops_wp_version;
@@ -132,9 +150,6 @@ function raindrops_sidebar_menus( $position = 'default' ) {
 	}
 }
 
-/**
- * 
- */
 function boots_extend_style() {
 
 	raindrops_register_styles( "boots" );
@@ -147,5 +162,4 @@ function boots_extend_style() {
 	add_filter( 'raindrops_fallback_footer_link_color', 'raindrops_child_fallback_footer_link_color' );
 	add_filter( 'raindrops_fallback_header_textcolor', 'raindrops_child_fallback_header_textcolor' );
 }
-
 ?>
