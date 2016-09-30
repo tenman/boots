@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.400.1
+Version: 1.430
 Tags:black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow,dark,light,one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -96,7 +96,7 @@ Template: raindrops
 #calendar_wrap td{
     height:auto;
 }
-/** 
+/**
  * FOOTER
  *
  */
@@ -592,7 +592,7 @@ body.rd-type-boots{
     }
     .rsidebar .eco-archive li a:after, .lsidebar .eco-archive li a:after{
         content: ',';
-    }   
+    }
     .rd-col-1 ul.archive > li:nth-child(even),
     .rd-col-1 ul.index > li:nth-child(even){
         background:rgba(222,222,222,.3);
@@ -624,7 +624,7 @@ body.rd-type-boots{
         padding:0;
     }
     .rd-col-3 .index{
-        margin:-2em 0 0; 
+        margin:-2em 0 0;
     }
     .rd-col-2 .index{
         margin:-2em 2em 2em;
@@ -635,7 +635,7 @@ body.rd-type-boots{
         transparent,
         rgba(127,127,127,.3) 2px,
         rgba(127,127,127,.1) 3px,
-        rgba(127,127,127,.1) 5px );   
+        rgba(127,127,127,.1) 5px );
     }
     .h2-thumb .size-thumbnail{
         padding:0;
@@ -999,7 +999,7 @@ div[class^="entry-meta"] .author .avatar,
 body {
     font-family: "-apple-system", "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, sans-serif;
 }
-/* IE10以上 */ 
+/* IE10以上 */
 @media all and (-ms-high-contrast: none) {
     body {
     font-family: Verdana, Meiryo, sans-serif;
@@ -1014,8 +1014,8 @@ body,h1,h2,h3,.h1,.h2,.h3{
 #access li ul ul{
     width:auto;
 }
-.widget_nav_menu.sticky-widget li ul ul, 
-.widget_pages.sticky-widget li ul ul, 
+.widget_nav_menu.sticky-widget li ul ul,
+.widget_pages.sticky-widget li ul ul,
 #access li ul ul{
     margin:0 0 0 -1px;
 }

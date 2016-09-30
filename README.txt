@@ -29,6 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.430
+	Data store change from option to theme_mod. needs parent theme Raindrops 1.430
+	Style renewal
 var:1.400.1
 	Fixed when database has raindrops_theme_settings field ( wp_options table )
 	The default setting for child theme is not applied correctly.
