@@ -34,6 +34,37 @@ $raindrops_page_width               = '';
  */
 $raindrops_use_transient = false;
 /**
+ * Gallery
+ * 
+ */
+$raindrops_extend_galleries = true;
+
+/**
+ * Theme property
+ */
+$boots_current_data				 = wp_get_theme();
+$boots_current_data_theme_uri	 = apply_filters( 'boots_theme_url', $boots_current_data->get( 'ThemeURI' ) );
+$boots_current_data_author_uri	 = apply_filters( 'boots_author_url', $boots_current_data->get( 'AuthorURI' ) );
+$boots_current_data_version		 = $boots_current_data->get( 'Version' );
+$boots_current_theme_name		 = $boots_current_data->get( 'Name' );
+$boots_current_theme_slug		 = str_replace( ' ', '-', $boots_current_theme_name );
+$boots_current_theme_slug		 = sanitize_html_class( $boots_current_theme_slug );
+
+
+/**
+ * Switch Theme data stored field theme_mod or option
+ */
+$raindrops_current_data				 = wp_get_theme( 'raindrops' );
+$raindrops_current_data_version		 = $raindrops_current_data->get( 'Version' );
+
+if (version_compare($raindrops_current_data_version, '1.430') >= 0) {
+
+	$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'theme_mod' );
+} else {
+
+	$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'option' );
+}
+/**
  * For Restore Parent Theme Settings
  * 
  */
@@ -217,7 +248,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_basefont_settings" => array( 'option_id'		 => 18,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_basefont_settings",
-			'option_value'	 => "16",
+			'option_value'	 => "15",
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( "Base Font Size Setting", 'raindrops' ),
 			'excerpt1'		 => '',
@@ -431,7 +462,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_use_featured_image_emphasis" => array( 'option_id'		 => 38,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_use_featured_image_emphasis",
-			'option_value'	 => 'yes',
+			'option_value'	 => 'no',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'USE or Not Emphasis of new content using the Featured Image', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -481,7 +512,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_place_of_site_title" => array( 'option_id'		 => 43,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_place_of_site_title",
-			'option_value'	 => 'header_image',
+			'option_value'	 => 'above',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Place of Title', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -531,7 +562,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_tagline_in_the_header_image" => array( 'option_id'		 => 47,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_tagline_in_the_header_image",
-			'option_value'	 => 'hide',
+			'option_value'	 => 'above',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Tagline in the header image', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -701,7 +732,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_display_article_publish_date" => array( 'option_id'		 => 65,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_display_article_publish_date",
-			'option_value'	 => 'show',
+			'option_value'	 => 'hide',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Display Post Publish Date', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -721,7 +752,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_display_default_category" => array( 'option_id'		 => 67,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_display_default_category",
-			'option_value'	 => 'show',
+			'option_value'	 => 'hide',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Display Default Category', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -821,7 +852,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_enable_header_image_filter" => array( 'option_id'		 => 77,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_enable_header_image_filter",
-			'option_value'	 => 'enable',
+			'option_value'	 => 'disable',
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Header Image Filter', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -901,7 +932,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		'raindrops_posted_on_position' => array( 'option_id'    => 84,
 			'blog_id'      => 0,
 			'option_name'  => 'raindrops_posted_on_position',
-			'option_value' => 'before',
+			'option_value' => 'after',
 			'autoload'     => 'show',
 			'title'        => esc_html__( 'Position of Posted on', 'raindrops' ),
 			'excerpt1'     => '',
@@ -931,7 +962,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		'raindrops_custom_footer_credit' => array( 'option_id'		 => 87,
 			'blog_id'		 => 0,
 			'option_name'	 => 'raindrops_custom_footer_credit',
-			'option_value'	 => false,
+			'option_value'	 => '',
 			'autoload'		 => 'show',
 			'title'			 => esc_html__( 'Custom Footer Credit', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -1088,6 +1119,106 @@ One is a method of up-loading the image from the below up-loading form. Another 
 			'excerpt2'     => esc_html__( 'value yes or no. default yes', 'raindrops' ),
 			'validate'     => 'raindrops_sticky_menu_validate',
 			'list'         => 101 ),
+	'raindrops_reset_options' => array( 'option_id'    => 103,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_reset_options',
+			'option_value' => 'no',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Reset Theme Settings', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Carefully Use! Reset All Theme Settings', 'raindrops' ),
+			'validate'     => 'raindrops_reset_options_validate',
+			'list'         => 102 ),
+	'raindrops_color_select' => array( 'option_id'    => 104,
+        'blog_id'      => 0,
+        'option_name'  => 'raindrops_color_select',
+        'option_value' => 'automatic',
+        'autoload'     => 'yes',
+        'title'        => esc_html__( 'Color Setting', 'raindrops' ),
+        'excerpt1'     => '',
+        'excerpt2'     => esc_html__( 'Select Automatic Color or Custom Color', 'raindrops' ),
+        'validate'     => 'raindrops_color_select_validate',
+		'list'         => 103 ),
+	'raindrops_show_date_author_in_attachment' => array( 'option_id'    => 105,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_show_date_author_in_attachment',
+			'option_value' => 'no',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Show Posted on in Attachment', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Default no', 'raindrops' ),
+			'validate'     => 'raindrops_show_date_author_in_attachment_validate',
+			'list'         => 104 ),
+	'raindrops_show_date_author_in_page' => array( 'option_id'    => 106,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_show_date_author_in_page',
+			'option_value' => 'no',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Show Posted on in Static Page', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Default no', 'raindrops' ),
+			'validate'     => 'raindrops_show_date_author_in_page_validate',
+			'list'         => 105 ),
+	'raindrops_default_sidebar_responsive' => array( 'option_id'    => 107,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_default_sidebar_responsive',
+			'option_value' => 'no',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Default Sidebar Responsive', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Default no', 'raindrops' ),
+			'validate'     => 'raindrops_default_sidebar_responsive_validate',
+			'list'         => 106 ),
+	'raindrops_extra_sidebar_responsive' => array( 'option_id'    => 108,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_extra_sidebar_responsive',
+			'option_value' => 'yes',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Default Sidebar Responsive', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Default yes', 'raindrops' ),
+			'validate'     => 'raindrops_extra_sidebar_responsive_validate',
+			'list'         => 107 ),
+	'raindrops_default_sidebar_responsive_breakpoint' => array( 'option_id'    => 107,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_default_sidebar_responsive_breakpoint',
+			'option_value' => 800,
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Responsive Breakpoint for Default Sidebar', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Please Set Numeric Pixel Value', 'raindrops' ),
+			'validate'     => 'raindrops_default_sidebar_responsive_breakpoint_validate',
+			'list'         => 106 ),
+	'raindrops_extra_sidebar_responsive_breakpoint' => array( 'option_id'    => 108,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_extra_sidebar_responsive_breakpoint',
+			'option_value' => 960,
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Responsive Breakpoint for Extra Sidebar', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Please Set Numeric Pixel Value', 'raindrops' ),
+			'validate'     => 'raindrops_extra_sidebar_responsive_breakpoint_validate',
+			'list'         => 107 ),
+	'raindrops_color_coded_category' => array( 'option_id'    => 109,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_color_coded_category',
+			'option_value' => 'yes',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Enable Color-coded category', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Please Set yes or no. default yes', 'raindrops' ),
+			'validate'     => 'raindrops_color_coded_category_validate',
+			'list'         => 108 ),
+	'raindrops_color_coded_post_tag' => array( 'option_id'    => 110,
+			'blog_id'      => 0,
+			'option_name'  => 'raindrops_color_coded_post_tag',
+			'option_value' => 'yes',
+			'autoload'     => 'yes',
+			'title'        => esc_html__( 'Enable Color-coded Post Tag', 'raindrops' ),
+			'excerpt1'     => '',
+			'excerpt2'     => esc_html__( 'Please Set yes or no. default yes', 'raindrops' ),
+			'validate'     => 'raindrops_color_coded_post_tag_validate',
+			'list'         => 109 ),
 	);
 	
 	
@@ -1109,13 +1240,16 @@ One is a method of up-loading the image from the below up-loading form. Another 
  * %c5% == class color5
  * @see post-new.php help tab
  */
+
 function raindrops_indv_css_boots() {
+	global $raindrops_child_base_setting_args, $raindrops_extend_galleries;
+
 	/**
 	 * Create Color from base color
 	 */
 	$base_color					 = raindrops_warehouse_clone( 'raindrops_base_color' );
 	$base_color					 = apply_filters( 'boots_base_color', $base_color );
-	$complementary_base_color	 = raindrops_complementary_color( $base_color );
+	$complementary_base_color	 = raindrops_complementary_color_clone( $base_color );
 
 	/**
 	 * fallback in the case of very dark color is set to base_color
@@ -1147,571 +1281,480 @@ function raindrops_indv_css_boots() {
 	 * Create Original color for accent
 	 */
 	$accent_color				 = '#336699';
-	$complementary_accent_color	 = raindrops_complementary_color( $hyper_link_color );
+	$complementary_accent_color	 = raindrops_complementary_color_clone( $hyper_link_color );
 	/**
 	 * Detect config for design
 	 */
+	$gallery_style = 		raindrops_gallerys_clone();
+
+	$font_size					 = raindrops_warehouse_clone( 'raindrops_basefont_settings' );	
 	$page_width					 = raindrops_warehouse_clone( 'raindrops_fluid_max_width' );
+	$site_title_postion			 = raindrops_warehouse_clone( 'raindrops_place_of_site_title' );
+	$tagline_postion			 = raindrops_warehouse_clone( 'raindrops_tagline_in_the_header_image' );
+	
+	if('automatic' == raindrops_warehouse_clone( 'raindrops_color_select' ) ) {
+		
+		$default_fonts_color		 = $raindrops_child_base_setting_args[ 'raindrops_default_fonts_color' ][ 'option_value' ];
+		$default_link_color			 = $raindrops_child_base_setting_args[ 'raindrops_hyperlink_color' ][ 'option_value' ];
+		$default_footer_color		 = $raindrops_child_base_setting_args[ 'raindrops_footer_color' ][ 'option_value' ];
+		$default_footer_link_color	 = $raindrops_child_base_setting_args[ 'raindrops_footer_link_color' ][ 'option_value' ];
+	} else {
+		
+		$default_fonts_color		 = raindrops_warehouse_clone( 'raindrops_default_fonts_color' );
+		$default_link_color			 = raindrops_warehouse_clone( 'raindrops_hyperlink_color' );
+		$default_footer_color		 = raindrops_warehouse_clone( 'raindrops_footer_color' );
+		$default_footer_link_color	 = raindrops_warehouse_clone( 'raindrops_footer_link_color' );
+	}
+	
+	$primary_memu_font_size = raindrops_warehouse_clone( 'raindrops_menu_primary_font_size' );
+	$primary_memu_width		= raindrops_warehouse_clone( 'raindrops_menu_primary_min_width' );
+	
+	if( 'doc3' == raindrops_warehouse_clone( 'raindrops_page_width' ) ) {
+		$page_width = raindrops_warehouse_clone( 'raindrops_fluid_max_width' );
+	}
+	if( 'doc5' == raindrops_warehouse_clone( 'raindrops_page_width' ) ) {
+		$page_width = raindrops_warehouse_clone( 'raindrops_full_width_max_width' );
+	}
 
 
+	$site_title_postion_css = '';
+	$site_tagline_position_css = '';
+	
+	if ( 'above' !== $site_title_postion ) {	
+		$site_title_postion_css = '#hd{ display:none;}';
+	} 
+	if ( 'above' == $tagline_postion ){
+		$site_tagline_position_css = '.rd-type-boots #header-image .tagline{display:none;}';	
+	}
+	
+	$header_text_color = get_header_textcolor();
+	
+	$css_pre = apply_filters('raindrops_indv_css_boots_pre','');
 
 	$css = <<<BOOTSCSS
-	   html{background:#fff;}
-		.home.rd-type-boots  .sticky{
-			background:{$rgba_border};
-		}
-	   .entry-content blockquote{
-		%c5%;
-		border-left: 10px solid {$rgba_border};
-	   }
-	   .entry-content blockquote:before {
-			%c5%;
-			background:transparent;
-	   }
-	   .entry-content table th,
-	   .entry-content table td{
-			border-bottom: 1px solid {$rgba_border};
-		}
-		.entry-content table tr:first-child td,
-		.entry-content table th{
-			border-top: 1px solid {$rgba_border};
-		}
-		.entry-content fieldset{
-			border: 1px solid {$rgba_border};
-		}
-		.entry-content legend{
-			color: {$complementary_base_color};
-		}
-		.rd-type-boots select option:nth-child(even) {
-			%c5%;
-		}
-		.rd-type-boots select option:nth-child(odd) {
-			%c4%;
+/* child setting */
+#access a{
+	font-size:{$primary_memu_font_size}%;
+}
+#access li{
+	min-width:{$primary_memu_width}em;
+}
+	{$gallery_style}
+.gallery .gallery-item{
+   float:none;
+}
+body{
+	font-size:{$font_size}px;
+}
+footer#ft{
+	color:{$default_footer_color};
+}
+footer#ft a{
+	color:{$default_footer_link_color};
+}
+body > div a{
+	color:{$default_link_color};
+}
+article{
+	color:{$default_fonts_color};
+}
+.rd-type-boots #site-title a,
+.rd-type-boots #top .tagline{
+	color:#{$header_text_color};
+}
+#access,
+html{background:#fff;}
+ {$site_tagline_position_css}
+ {$site_title_postion_css}
+ .home.rd-type-boots  .sticky{
+	 background:{$rgba_border};
+ }
+.entry-content blockquote{
+ %c5%;
+ border-left: 10px solid {$rgba_border};
+}
+.entry-content blockquote:before {
+	 %c5%;
+	 background:transparent;
+}
+.entry-content table th,
+.entry-content table td{
+	 border-bottom: 1px solid {$rgba_border};
+}
+.entry-content table tr:first-child td,
+.entry-content table th{
+	 border-top: 1px solid {$rgba_border};
+}
+ .entry-content fieldset{
+	 border: 1px solid {$rgba_border};
+ }
+ .entry-content legend{
+	 color: {$complementary_base_color};
+ }
+ .rd-type-boots select option:nth-child(even) {
+	 %c5%;
+ }
+ .rd-type-boots select option:nth-child(odd) {
+	 %c4%;
 
-		}
-		.rd-type-boots .sticky-single-follow-text.anytime a{
+ }
+.rd-type-boots .sticky-single-follow-text.anytime a{
 
-			border: 1px solid {$rgba_border};
-			%c5%;
-			color: {$complementary_base_color};
-		}
-		.rd-type-boots #wp-calendar {
-			border:none;
-		}
-		.rd-type-boots #ft #wp-calendar caption{
-			%c5%;
-		}
-		.rd-type-boots #wp-calendar th{
-			%c_5%;
-		}
-		.rd-type-boots #ft #wp-calendar th{
-			%c_5%;
-		}
+	 border: 1px solid {$rgba_border};
+	 %c5%;
+	 color: {$complementary_base_color};
+}
+.rd-type-boots #wp-calendar {
+	 border:none;
+}
+.rd-type-boots #ft #wp-calendar caption{
+	 %c5%;
+}
+.rd-type-boots #wp-calendar th{
+	 %c_5%;
+}
+.rd-type-boots #ft #wp-calendar th{
+	 %c_5%;
+}
 
-		.rd-type-boots #wp-calendar tbody td{
-			border: 1px solid {$rgba_border};
-			%c3%;
-			text-align:center;
-		}
-		.rd-type-boots .post-group_by-category-title a,
-		.rd-type-boots .post-group_by-category-title{
+.rd-type-boots #wp-calendar tbody td{
+	 border: 1px solid {$rgba_border};
+	 %c3%;
+	 text-align:center;
+}
+.rd-type-boots .post-group_by-category-title a,
+.rd-type-boots .post-group_by-category-title{
 
-			text-align:center;
-			margin:0;
-		}
-		.rd-type-boots .post-group_by-category-title + ul{
-			border: 1px solid {$rgba_border};
-			margin:0;
+	 text-align:center;
+	 margin:0;
+}
+.rd-type-boots .post-group_by-category-title + ul{
+	 border: 1px solid {$rgba_border};
+	 margin:0;
 
-		}
-		.rd-type-boots .topsidebar .post-group_by-category-title + ul{
-			border:none;
-		}
-		.rd-type-boots #ft #wp-calendar{
-			%c2%;
-		}
-		.rd-type-boots #ft #wp-calendar tbody td{
-			border: 1px solid {$rgba_border};
-			%c2%;
-			text-align:center;
-		}
+}
+.rd-type-boots .topsidebar .post-group_by-category-title + ul{
+	 border:none;
+}
+.rd-type-boots #ft #wp-calendar{
+	 %c2%;
+}
+.rd-type-boots #ft #wp-calendar tbody td{
+	 border: 1px solid {$rgba_border};
+	 %c2%;
+	 text-align:center;
+}
 
-		.rd-type-boots .rsidebar #wp-calendar tbody td a,
-		.rd-type-boots .lsidebar #wp-calendar tbody td a{
-			border: 1px solid {$rgba_border};
-			%c4%;
-			width:100%;
-			height:100%;
-			display:block;
-			text-decoration:none;
-		}
-		.rd-type-boots #wp-calendar tbody #today{
-			%c_3%;
-		}
+.rd-type-boots .rsidebar #wp-calendar tbody td a,
+.rd-type-boots .lsidebar #wp-calendar tbody td a{
+	 border: 1px solid {$rgba_border};
+	 %c4%;
+	 width:100%;
+	 height:100%;
+	 display:block;
+	 text-decoration:none;
+}
+.rd-type-boots #wp-calendar tbody #today{
+	 %c_3%;
+}
 
-		.rd-type-boots #wp-calendar tfoot #next a,
-		.rd-type-boots #wp-calendar tfoot #prev a{
-			%c4%;
-		}
-		.rd-type-boots .rsidebar  li,
-		.rd-type-boots .lsidebar li{
-			color:#999;
-		}
-		.rd-type-boots .lsidebar .widget_rss a,
-		.rd-type-boots .lsidebar .widget_rss a {
-			%c5%;
-			display:inline-block;
-		}
-		.rd-type-boots .post-group_by-category-title{
-			padding:.6em .6em;
-		}
-		#nav-below .nav-next a,
-		#nav-below .nav-previous a{
-			%c_1%;
-		}
+.rd-type-boots #wp-calendar tfoot #next a,
+.rd-type-boots #wp-calendar tfoot #prev a{
+	 %c4%;
+}
+.rd-type-boots .rsidebar  li,
+.rd-type-boots .lsidebar li{
+	 color:#999;
+}
+.rd-type-boots .lsidebar .widget_rss a,
+.rd-type-boots .lsidebar .widget_rss a {
+	 %c5%;
+	 display:inline-block;
+}
+.rd-type-boots .post-group_by-category-title{
+	 padding:.6em .6em;
+}
+#nav-below .nav-next a,
+#nav-below .nav-previous a{
+	 %c_1%;
+}
 
-		#ft .footer-widget .widgettitle{
-			%c_1%;
-		}
-		.rd-type-boots .rsidebar .widget .widgettitle,
-		.rd-type-boots .lsidebar .widget .widgettitle{
-			%c_1%;
-		}
-		.rd-type-boots .raindrops-pinup-entries .entry-title{
-			%c_5%;
-		}
-		.rd-type-boots .lsidebar .widget_rss .widgettitle{
-			background:transparent;
-			display:block;
-			height:2em;
-		}
-		.rd-type-boots input[type="password"],
-		.rd-type-boots input[type="url"],
-		.rd-type-boots input[type="tell"],
-		.rd-type-boots input[type="search"],
-		.rd-type-boots input[type="datetime-local"],
-		.rd-type-boots input[type="datetime"],
-		.rd-type-boots input[type="number"],
-		.rd-type-boots .entry-content textarea,
-		.rd-type-boots .entry-content input[type="email"],
-		.rd-type-boots .entry-content input[type="text"],
-		.rd-type-boots .entry-content input[type="submit"],
-		.rd-type-boots .entry-content input[type="reset"],
-		.rd-type-boots .entry-content input[type="file"],
-		.rd-type-boots .social textarea,
-		.rd-type-boots .social input[type="text"],
-		.rd-type-boots .social input[type="submit"],
-		.rd-type-boots .social input[type="reset"],
-		.rd-type-boots .social input[type="file"]{
-			border:1px solid {$rgba_border};
-			%c5%;
-		}
-		.rd-type-boots input[type="submit"]{
-			%c4%;
-			border:1px solid {$rgba_border};
-		}
-		#nav-below-comments .nav-next a,
-		#nav-below-comments .nav-previous a,
-		#nav-above-comments .nav-next a,
-		#nav-above-comments .nav-previous a,
-		#ft .footer-widget + ul li .rsswidget,
-		.rd-type-boots .edit-link,
-		.rd-type-boots .entry-content .more-link,
-		.rd-type-boots .entry-content .raindrops-excerpt-more{
-			%c5%;
-			border:1px solid {$rgba_border_3};
-		}
-		.rd-type-boots .entry-meta{
-			border-bottom:1px solid {$rgba_border_3};
-		}
-		.rd-type-boots .entry-meta a:hover{
-			background: {$rgba_border_3}!important;
-		}
-		.rd-type-boots .yui-t4 #yui-main + .yui-b,
-		.rd-type-boots .yui-t5 #yui-main + .yui-b,
-		.rd-type-boots .yui-t6 #yui-main + .yui-b{
-			border-left:1px solid {$rgba_border_3};
-		}
-		.rd-type-boots .yui-t1 #yui-main + .yui-b,
-		.rd-type-boots .yui-t2 #yui-main + .yui-b,
-		.rd-type-boots .yui-t3 #yui-main + .yui-b{
-			border-right:1px solid {$rgba_border_3};
-		}
-		.rd-type-boots .rsidebar{
-			border-left:1px solid {$rgba_border_3};
-		}
-		.rsidebar .eco-archive > .month , .lsidebar .eco-archive > .month,
-		.rsidebar .eco-archive > .year, .lsidebar .eco-archive > .year{
-			border-bottom:1px solid {$rgba_border_3};
-		}
+#ft .footer-widget .widgettitle{
+	 %c5%;
+}
+.rd-type-boots .rsidebar .widget .widgettitle,
+.rd-type-boots .lsidebar .widget .widgettitle{
+	 %c5%;
+}
+.rd-type-boots .raindrops-pinup-entries .entry-title{
+	 %c_5%;
+}
+.rd-type-boots .lsidebar .widget_rss .widgettitle{
+	 background:transparent;
+	 display:block;
+	 height:2em;
+}
+.rd-type-boots input[type="password"],
+.rd-type-boots input[type="url"],
+.rd-type-boots input[type="tell"],
+.rd-type-boots input[type="search"],
+.rd-type-boots input[type="datetime-local"],
+.rd-type-boots input[type="datetime"],
+.rd-type-boots input[type="number"],
+.rd-type-boots .entry-content textarea,
+.rd-type-boots .entry-content input[type="email"],
+.rd-type-boots .entry-content input[type="text"],
+.rd-type-boots .entry-content input[type="submit"],
+.rd-type-boots .entry-content input[type="reset"],
+.rd-type-boots .entry-content input[type="file"],
+.rd-type-boots .social textarea,
+.rd-type-boots .social input[type="text"],
+.rd-type-boots .social input[type="submit"],
+.rd-type-boots .social input[type="reset"],
+.rd-type-boots .social input[type="file"]{
+	 border:1px solid {$rgba_border};
+	 %c5%;
+}
+.rd-type-boots input[type="submit"]{
+	 %c4%;
+	 border:1px solid {$rgba_border};
+}
+#nav-below-comments .nav-next a,
+#nav-below-comments .nav-previous a,
+#nav-above-comments .nav-next a,
+#nav-above-comments .nav-previous a,
+#ft .footer-widget + ul li .rsswidget,
+.rd-type-boots .edit-link,
+.rd-type-boots .entry-content .more-link,
+.rd-type-boots .entry-content .raindrops-excerpt-more{
+	 %c5%;
+	 border:1px solid {$rgba_border_3};
+}
+.rd-type-boots .entry-meta{
+	 border-bottom:1px solid {$rgba_border_3};
+}
+.rd-type-boots .entry-meta a:hover{
+	 background: {$rgba_border_3}!important;
+}
+.rd-type-boots .yui-t4 #yui-main + .yui-b,
+.rd-type-boots .yui-t5 #yui-main + .yui-b,
+.rd-type-boots .yui-t6 #yui-main + .yui-b{
+	 /*border-left:1px solid {$rgba_border_3};*/
+}
+.rd-type-boots .yui-t1 #yui-main + .yui-b,
+.rd-type-boots .yui-t2 #yui-main + .yui-b,
+.rd-type-boots .yui-t3 #yui-main + .yui-b{
+	 border-right:1px solid {$rgba_border_3};
+}
+.rd-type-boots .rsidebar{
+	 border-left:1px solid {$rgba_border_3};
+}
+.rsidebar .eco-archive > .month , .lsidebar .eco-archive > .month,
+.rsidebar .eco-archive > .year, .lsidebar .eco-archive > .year{
+	 border-bottom:1px solid {$rgba_border_3};
+}
 
-		#comments .pingback a:not(.comment-edit-link),
-		#comments .pingback{
-			%c_1%;
-			border:1px solid {$rgba_border_3};
-		}
-		#comments .comment{
-			%c4%;
-			border:1px solid {$rgba_border_3};
-		}
-		.comment-author{
-			%c5%;
-			border:1px solid {$rgba_border_3};
-		}
-		.current-menu-item a,
-		.current_page_item a,
-		.current-menu-item,
-		.current_page_item{
-			border-bottom:6px solid {$rgba_border_3};
-		}
-		.comment .reply{
-			%c3%;
-		}
-		.pingback .comment-edit-link{
-			%c5%;
-			border:1px solid {$rgba_border_3};
-		}
+#comments .pingback a:not(.comment-edit-link),
+#comments .pingback{
+	 %c_1%;
+	 border:1px solid {$rgba_border_3};
+}
+#comments .comment{
+	 %c4%;
+	 border:1px solid {$rgba_border_3};
+}
+.comment-author{
+	 %c5%;
+	 border:1px solid {$rgba_border_3};
+}
+.current-menu-item a,
+.current_page_item a,
+.current-menu-item,
+.current_page_item{
+	 border-bottom:6px solid {$rgba_border_3};
+}
+.comment .reply{
+	 %c3%;
+}
+.pingback .comment-edit-link{
+	 %c5%;
+	 border:1px solid {$rgba_border_3};
+}
 
-		.comment .comment-edit-link{
-			%c_3%;
-			border:1px solid {$rgba_border_3};
-		}
-		.rd-type-boots hr.tear {
-			height:16px;
-			background:linear-gradient(-135deg, #fff 4px, transparent 0) 0 4px,linear-gradient(135deg, #fff 4px, {$rgba_border_3} 0) 0 4px;
-			background-color: #fff;
-			background-position: left bottom !important;
-			background-repeat: repeat-x !important;
-			background-size: 8px 8px;
-			width:100%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:hover:after,
-		.rd-type-boots .lsidebar > ul > li > ul > li:hover:after{
-			content: "";
-			position:absolute;
-			top: 0;
-			right: 0;
-			height: 0;
-			width: 0;
-			border: 21px solid transparent;
-			border-right-color: #fff;
-		}
-		/*.rd-type-boots .yui-t2 .lsidebar > ul > li > ul > li:hover:before{
-			content: "";
-			position:absolute;
-			top: 0;
-			left: 0;
-			height: 0;
-			width: 0;
-			border: 21px solid transparent;
-			border-left-color: #fff;
-		}	*/
+.comment .comment-edit-link{
+	 %c_3%;
+	 border:1px solid {$rgba_border_3};
+}
+.rd-type-boots hr.tear {
+	 height:16px;
+	 background:linear-gradient(-135deg, #fff 4px, transparent 0) 0 4px,linear-gradient(135deg, #fff 4px, {$rgba_border_3} 0) 0 4px;
+	 background-color: #fff;
+	 background-position: left bottom !important;
+	 background-repeat: repeat-x !important;
+	 background-size: 8px 8px;
+	 width:100%;
+}
+figure[id^=attachment]{
+	 background:{$rgba_border_3};
+	 border:1px solid {$base_color};
+}
+figure[id^=attachment] figcaption{
 
-		figure[id^=attachment]{
-			background:{$rgba_border_3};
-			border:1px solid {$base_color};
-		}
-		figure[id^=attachment] figcaption{
-
-			background:#fff;
-		}
-		#date_list tr:nth-child(odd) .time,
-		#raindrops_year_list tr:nth-child(odd) .month-name,
-		#month_list tr:nth-child(odd) .month-date{
-			%c3%;
-		}
-		#date_list tr:nth-child(even) .time,
-		#raindrops_year_list tr:nth-child(even) .month-name,
-		#month_list tr:nth-child(even) .month-date{
-			%c4%;
-		}
-		#raindrops_year_list tr .month-name + td,
-		#month_list tr .month-date + td{
-			border:none;
-		}
-
-		#raindrops_year_list tr .month-name + td{
-			border-bottom:1px solid {$base_color};
-		}
-		.entry-content .pagenate a span,
-		.entry-content .pagenate span{
-				background: #fff;
-				border:1px solid {$base_color};
-		}
-		.entry-content .pagenate a:hover span{
-				%c_2%;
-		}
-		.entry-content .pagenate > span{
-				background: {$rgba_border_3};
-				border:1px solid {$base_color};
-		}
-	@media screen and (min-width : 641px){
-		.rd-type-boots #access .children,
-		.rd-type-boots #access .sub-menu,
-		.rd-type-boots #access .children a,
-		.rd-type-boots #access .sub-menu a{
-			%c_5%;
-		}
-	}
-	@media screen and (max-width : 640px){
-		.entry-content dl{
-			border:1px solid {$rgba_border_3};
-		}
-		.entry-content dt{
-			%c_1%;
-		 }
-		 .entry-content dd{
-			 %c5%;
-		 }
-		.rd-type-boots .rsidebar > ul > li > ul > li:hover:after,
-		.rd-type-boots .lsidebar > ul > li > ul > li:hover:after{
-
-			border: 28px solid transparent;
-			border-right-color: #fff;
-		}
-		.child-boots #top{
-			z-index:9999;
-			display:block!important;
-		}
-		#access .menu > li > a,
-		#access .children li,
-		#access .sub-menu li,
-		#top #access > div.menu > ul > li > a,
-		#top #access .menu > li > a,
-		#top #access .menu-header,
-		#access ul,
-		#access a + ul,
-		#top #access .children,
-		#top #access .sub-menu,
-		#access .children a,
-		#access .sub-menu a{
-			%c_5%;
-			position:static!important;
-			display:block!important;
-			width:100%;
-			min-width:100%;
-			visibility:visible;
-			float:none!important;
-			overflow:visible!important;
-			z-index:999!important;
-			height:auto;
-			text-align:left;
-		}
-
-		.page_item_has_children > a:after,
-		#access .menu-item-has-children > a:after,
-		#access .sub-menu .page_item_has_children > a:after,
-		#access .children .menu-item-has-children > a:after,
-		#access .sub-menu .menu-item-has-children > a:after {
-			content: '';
-			display:none;
-		}
-
-	}
-		.rd-type-boots .entry-title:hover span:first-letter,
-		.rd-type-boots .entry-title a:focus span:first-letter,
-		#ft .widget_tag_cloud .tagcloud a:hover,
-		#ft .eco-archive .year a:hover,
-		#ft .eco-archive .month a:hover,
-		#ft a:hover{
-			color:{$complementary_base_color};
-		}
-		.rd-type-boots .entry-title:hover span,
-		.rd-type-boots .entry-title a:focus span,
-		.rsidebar .eco-archive .month a:hover,
-		.lsidebar .eco-archive .month a:hover,
-		.rsidebar .eco-archive .year a:hover,
-		.lsidebar .eco-archive .year a:hover,
-		.lsidebar .widget_tag_cloud .tagcloud a:hover,
-		.rd-type-boots #site-title:hover span,
-		.rd-type-boots #site-title a:focus span,
-		.rd-type-boots #access .sub-menu.focus > a,
-		.rd-type-boots #access .chilren.focus > a,
-		.rd-type-boots #access .sub-menu:hover > a,
-		.rd-type-boots #access .chilren:hover > a,
-			.rd-type-boots #access li a:hover{
-			color:{$hover_contrast_color};
-		}
-
-		#ft{
-			{$gradient}
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+1):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+1):hover{
-			%c5%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+2):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+2):hover{
-			%c4%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+3):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+3):hover{
-			%c3%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+4):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+4):hover{
-			%c2%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+5):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+5):hover{
-			%c1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+6):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+6):hover{
-			%c_1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+7):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+7):hover{
-			%c1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+8):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+8):hover{
-			%c2%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+9):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+9):hover{
-			%c3%;
-		}
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+10):hover a,
-		.rd-type-boots .lsidebar > ul > li > ul > li:nth-child(10n+10):hover{
-			%c4%;
-
-		}
-		.rd-type-boots .rsidebar > ul > li > ul li,
-		.rd-type-boots .lsidebar > ul > li > ul li {
-			position:relative;
-		}
+	 background:#fff;
+}
+#date_list tr:nth-child(odd) .time,
+#raindrops_year_list tr:nth-child(odd) .month-name,
+#month_list tr:nth-child(odd) .month-date{
+	 %c3%;
+}
+#date_list tr:nth-child(even) .time,
+#raindrops_year_list tr:nth-child(even) .month-name,
+#month_list tr:nth-child(even) .month-date{
+	 %c4%;
+}
 
 
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+1):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+1):hover{
-			%c5%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+2):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+2):hover{
-			%c4%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+3):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+3):hover{
-			%c3%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+4):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+4):hover{
-			%c2%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+5):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+5):hover{
-			%c1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+6):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+6):hover{
-			%c_1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+7):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+7):hover{
-			%c1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+8):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+8):hover{
-			%c2%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+9):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+9):hover{
-			%c3%;
-		}
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+10):hover a,
-		.rd-type-boots .rsidebar > ul > li > ul > li:nth-child(10n+10):hover{
-			%c4%;
+#raindrops_year_list tr .month-name + td{
+	 border-bottom:1px solid {$base_color};
+}
+.entry-content .pagenate a span,
+.entry-content .pagenate span{
+		 background: #fff;
+		 border:1px solid {$base_color};
+}
+.entry-content .pagenate a:hover span{
+		 %c_2%;
+}
+.entry-content .pagenate > span{
+		 background: {$rgba_border_3};
+		 border:1px solid {$base_color};
+}
+@media screen and (min-width : 641px){
+.rd-type-boots #access .children,
+.rd-type-boots #access .sub-menu,
+.rd-type-boots #access .children a,
+.rd-type-boots #access .sub-menu a{
+	 %c5%;
+}
+}
+@media screen and (max-width : 640px){
+.entry-content dl{
+	 border:1px solid {$rgba_border_3};
+}
+.entry-content dt{
+	 %c_1%;
+ }
+ .entry-content dd{
+	  %c5%;
+ }
+.rd-type-boots .rsidebar > ul > li > ul > li:hover:after,
+.rd-type-boots .lsidebar > ul > li > ul > li:hover:after{
 
-		}
-		.rd-type-boots .lsidebar > ul > .widget_recent-post-groupby-cat ul li:hover a,
-		.rd-type-boots .lsidebar > ul > .widget_recent-post-groupby-cat ul li:hover,
-		.rd-type-boots .rsidebar > ul > li > ul > li a,
-		.rd-type-boots .rsidebar > ul > li > ul > li a{
-			background:none!important;
-		}
+	 border: 28px solid transparent;
+	 border-right-color: #fff;
+}
+.child-boots #top{
+	 z-index:9999;
+	 display:block!important;
+}
+#access .menu > li > a,
+#access .children li,
+#access .sub-menu li,
+#top #access > div.menu > ul > li > a,
+#top #access .menu > li > a,
+#top #access .menu-header,
+#access ul,
+#access a + ul,
+#top #access .children,
+#top #access .sub-menu,
+#access .children a,
+#access .sub-menu a{
+	 %c_5%;
+	 position:static!important;
+	 display:block!important;
+	 width:100%;
+	 min-width:100%;
+	 visibility:visible;
+	 float:none!important;
+	 overflow:visible!important;
+	 z-index:999!important;
+	 height:auto;
+	 text-align:left;
+}
 
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+1):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+1):hover{
-			%c5%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+2):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+2):hover{
-			%c4%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+3):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+3):hover{
-			%c3%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+4):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+4):hover{
-			%c2%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+5):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+5):hover{
-			%c1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+6):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+6):hover{
-			%c_1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+7):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+7):hover{
-			%c1%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+8):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+8):hover{
-			%c2%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+9):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+9):hover{
-			%c3%;
-		}
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+10):hover a,
-		.rd-type-boots .lsidebar > ul > li > div > ul > li:nth-child(10n+10):hover{
-			%c4%;
+.page_item_has_children > a:after,
+#access .menu-item-has-children > a:after,
+#access .sub-menu .page_item_has_children > a:after,
+#access .children .menu-item-has-children > a:after,
+#access .sub-menu .menu-item-has-children > a:after {
+	 content: '';
+	 display:none;
+}
 
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+1):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+1):hover{
-			%c5%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+2):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+2):hover{
-			%c4%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+3):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+3):hover{
-			%c3%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+4):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+4):hover{
-			%c2%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+5):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+5):hover{
-			%c1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+6):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+6):hover{
-			%c_1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+7):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+7):hover{
-			%c1%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+8):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+8):hover{
-			%c2%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+9):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+9):hover{
-			%c3%;
-		}
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+10):hover a,
-		.rd-type-boots .rsidebar > ul > li > div > ul > li:nth-child(10n+10):hover{
-			%c4%;
-		}
+}
+
+.rd-type-boots .entry-title:hover span,
+.rd-type-boots .entry-title a:focus span,
+.rsidebar .eco-archive .month a:hover,
+.lsidebar .eco-archive .month a:hover,
+.rsidebar .eco-archive .year a:hover,
+.lsidebar .eco-archive .year a:hover,
+.lsidebar .widget_tag_cloud .tagcloud a:hover,
+.rd-type-boots #site-title:hover span,
+.rd-type-boots #site-title a:focus span,
+.rd-type-boots #access .sub-menu.focus > a,
+.rd-type-boots #access .chilren.focus > a,
+.rd-type-boots #access .sub-menu:hover > a,
+.rd-type-boots #access .chilren:hover > a,
+	 .rd-type-boots #access li a:hover{
+	 color:{$hover_contrast_color};
+}
+
+#ft{
+	 {$gradient}
+}
+
+.rd-type-boots .lsidebar > ul > li > ul > li:hover{
+	 border-bottom:3px solid {$complementary_base_color};
+	 margin-bottom:-3px;
+}
+
+.rd-type-boots .rsidebar > ul > li > ul li,
+.rd-type-boots .lsidebar > ul > li > ul li {
+	 position:relative;
+}
+
 BOOTSCSS;
-	return apply_filters( __FUNCTION__, $css );
+
+	$thumbnail_size_w = get_option( 'thumbnail_size_w' );
+	if ( !empty( $thumbnail_size_w ) ) {
+		if ( $thumbnail_size_w < 160 ) {
+			$thumbnail_size_w = 160;
+		}
+		$css .= ' .rd-thumbnail{width:' . absint( $thumbnail_size_w ) . 'px; max-width:100%;}';
+	}
+
+	$medium_size_w = get_option( 'medium_size_w' );
+	if ( !empty( $medium_size_w ) ) {
+
+		$css .= ' .rd-medium{width:' . absint( $medium_size_w ) . 'px; max-width:100%;}';
+	}
+	$large_size_w = get_option( 'large_size_w' );
+	if ( !empty( $large_size_w ) ) {
+
+		$css .= ' .rd-large{width:' . absint( $large_size_w ) . 'px; max-width:100%;}';
+	}
+
+	$css .= ' .rd-w320{width:320px; max-width:100%;}';
+	$css .= ' .rd-w480{width:480px; max-width:100%;}';
+	$css .= ' .rd-w640{width:640px; max-width:100%;}';
+
+	$raindrops_sitewide_css = raindrops_warehouse_clone( 'raindrops_sitewide_css' );
+
+	if ( isset( $raindrops_sitewide_css ) && !empty( $raindrops_sitewide_css ) ) {
+
+		$css .= ' ' . wp_strip_all_tags( $raindrops_sitewide_css );
+	}
+
+	return apply_filters( __FUNCTION__, $css_pre. $css );
 }
