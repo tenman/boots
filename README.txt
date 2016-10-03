@@ -29,6 +29,8 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.433
+	Remove languages/css/ja.css
 var:1.431
 	Remove Theme tags
 var:1.430
