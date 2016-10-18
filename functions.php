@@ -150,33 +150,33 @@ function raindrops_sidebar_menus( $position = 'default' ) {
  * 
  */
 if ( ! function_exists( 'raindrops_child_fallback_footer_color_default' ) ) {
-	function raindrops_child_fallback_footer_color_default( $val ) {
+	function raindrops_child_fallback_footer_color_default( ) {
 		global $raindrops_child_base_setting_args;
 
 		return $raindrops_child_base_setting_args['raindrops_footer_color']['option_value'];
 	}
 }
 if ( ! function_exists( 'raindrops_child_fallback_hyperlink_color_default' ) ) {
-	function raindrops_child_fallback_hyperlink_color_default( $val ) {
+	function raindrops_child_fallback_hyperlink_color_default( ) {
 		global $raindrops_child_base_setting_args;
 		return $raindrops_child_base_setting_args['raindrops_hyperlink_color']['option_value'];
 	}
 }
 
-	function raindrops_child_fallback_fonts_color_default( $val ) {
+	function raindrops_child_fallback_fonts_color_default( ) {
 		global $raindrops_child_base_setting_args;
 		return $raindrops_child_base_setting_args['raindrops_default_fonts_color']['option_value'];
 
 	}
 
 if ( ! function_exists( 'raindrops_child_fallback_footer_link_color' ) ) {
-	function raindrops_child_fallback_footer_link_color( $val ) {
+	function raindrops_child_fallback_footer_link_color( ) {
 		global $raindrops_child_base_setting_args;
 		return $raindrops_child_base_setting_args['raindrops_footer_link_color']['option_value'];
 	}
 }
 if ( ! function_exists( 'raindrops_child_fallback_header_textcolor' ) ) {
-	function raindrops_child_fallback_header_textcolor( $val ) {
+	function raindrops_child_fallback_header_textcolor( ) {
 		global $raindrops_child_base_setting_args;		
 		return  get_theme_mod( 'header_textcolor', 'ffffff' );
 	}

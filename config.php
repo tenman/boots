@@ -50,19 +50,20 @@ $boots_current_theme_name		 = $boots_current_data->get( 'Name' );
 $boots_current_theme_slug		 = str_replace( ' ', '-', $boots_current_theme_name );
 $boots_current_theme_slug		 = sanitize_html_class( $boots_current_theme_slug );
 
-
+if ( !isset( $raindrops_setting_type ) ) {
 /**
  * Switch Theme data stored field theme_mod or option
  */
-$raindrops_current_data				 = wp_get_theme( 'raindrops' );
-$raindrops_current_data_version		 = $raindrops_current_data->get( 'Version' );
+	$raindrops_current_data				 = wp_get_theme( 'raindrops' );
+	$raindrops_current_data_version		 = $raindrops_current_data->get( 'Version' );
 
-if (version_compare($raindrops_current_data_version, '1.433') >= 0) {
+	if (version_compare($raindrops_current_data_version, '1.433') >= 0) {
 
-	$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'theme_mod' );
-} else {
+		$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'theme_mod' );
+	} else {
 
-	$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'option' );
+		$raindrops_setting_type	= apply_filters('raindrops_theme_data_store', 'option' );
+	}
 }
 /**
  * For Restore Parent Theme Settings
@@ -1362,7 +1363,7 @@ article{
 .rd-type-boots #top .tagline{
 	color:#{$header_text_color};
 }
-#access,
+
 html{background:#fff;}
  {$site_tagline_position_css}
  {$site_title_postion_css}
