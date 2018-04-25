@@ -280,23 +280,23 @@ h1,
    
 }
 .sticky-single-follow-text{
-    font-size:230.7%;
+ 
 }
 
 #site-title{
     letter-spacing: 0.03em;	
 }
 .ie8 #site-title{
-    font-size:236.8%;
+ 
 }
 .pagetitle{
-    font-size:230.7%;
+
 }
 .entry-title{
-    font-size:230.7%;
+  
 }
 .rd-grid .entry-title{
-    font-size:230.7%;
+
     font-size:1.5em;
     max-width:calc(100% - 4px);
     width:100%;
@@ -409,4 +409,13 @@ body:not(.ja) .raindrops-sticky .entry-content{
 .ja .raindrops-sticky .entry-content{
     font-family:'Meiryo',Arial,sans-serif;
 }
+.child-boots .search .pagetitle,	
+.child-boots .date .page-title,
 
+.child-boots .entry-content h2,  
+.child-boots article .entry-title{
+        font-size:1.539em;
+}
+.child-boots.archive .archives .title-wrapper .title{
+    font-size:1em;
+}

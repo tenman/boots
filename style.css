@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.516
+Version: 1.516.1
 Tags: one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -279,7 +279,7 @@ input[type="text"]{
 .home.rd-type-boots #header-image{
     min-height:100px;
 }
-.loop-before-toolbar{
+.child-boots .loop-before-toolbar{
     margin-top:1em auto;
     padding-right:2em;
 
@@ -918,7 +918,8 @@ div[class^="entry-meta"] .author .avatar,
 .child-boots #doc5.yui-t6 #container > .first > div,
 .child-boots #doc5.yui-t5 #container > .first > div,
 .child-boots #doc5.yui-t4 #container > .first > div{
-    margin:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 #container > .first > #nav-below:after{
@@ -982,9 +983,7 @@ div[class^="entry-meta"] .author .avatar,
         overflow-x:hidden;
 }
 
-.child-boots.rd-grid .title-wrapper .page-title{
-    height:auto;
-}
+
 .rd-type-boots #access{
     background:#fff;
 }
@@ -996,4 +995,7 @@ div[class^="entry-meta"] .author .avatar,
 .child-boots.rd-grid ul.index  > .raindrops-sticky .entry-content{
     margin-bottom:0;
     padding-bottom:0;
+}
+.rd-grid .rd-category-description{
+    max-width:100%!important;
 }
