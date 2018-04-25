@@ -29,6 +29,10 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+
+var:1.516
+	Parent theme relate change.
+    Change to grid layout
 var:1.436
 	$raindrops_setting_type Add if isset conditional
 	Remove languages/css/ja.css
