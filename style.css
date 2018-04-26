@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.516.1
+Version: 1.516.2
 Tags: one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -124,6 +124,10 @@ address{
 #ft #calendar_wrap tfoot td{
     border:none;
     text-align:left;
+}
+#ft #wp-calendar caption{
+    margin:0;
+    padding:.5em 0;
 }
 /**
  *
@@ -270,12 +274,20 @@ input[type="text"]{
 .child-boots.rd-grid .raindrops-sticky{
     margin:0;
 }
-.child-boots.rd-grid li.raindrops-sticky{
+.child-boots.rd-grid #bd li.raindrops-sticky{
     flex-basis:100%;
-    margin-bottom:1.5em;
-    margin-top:1.5em;
+    margin-bottom:.5em;
+    margin-top:.25em;
 }
-
+.child-boots #bd li.raindrops-sticky{
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+    margin-left:auto;
+    margin-rigght:auto;
+    margin-bottom:0;
+    margin-top:0;
+}
 .home.rd-type-boots #header-image{
     min-height:100px;
 }
@@ -316,9 +328,7 @@ body.child-boots{
     text-align:center;
     vertical-align:top;
 }
-.child-boots #ft #wp-calendar caption{
-    padding:1em;
-}
+
 .child-boots  .datetable .month-date .day-name{
     margin:1em;
 }
@@ -998,4 +1008,21 @@ div[class^="entry-meta"] .author .avatar,
 }
 .rd-grid .rd-category-description{
     max-width:100%!important;
+}
+/**
+ * layout adjust
+ */
+.rd-type-boots .yui-t6 #container > .first,
+.rd-type-boots .yui-t5 #container > .first,
+.rd-type-boots .yui-t4 #container > .first {
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+}
+.rd-list .index > li{
+    margin-top:0;
+    margin-bottom:0;
+}
+.rd-col-3 .lsidebar{
+    margin-top:-5px;
 }

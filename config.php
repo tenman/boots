@@ -191,7 +191,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 		"raindrops_right_sidebar_width_percent"				 => array( 'option_id'		 => 13,
 			'blog_id'		 => 0,
 			'option_name'	 => "raindrops_right_sidebar_width_percent",
-			'option_value'	 => "25",
+			'option_value'	 => "33",
 			'autoload'		 => 'yes',
 			'title'			 => esc_html__( 'Extra Sidebar Width', 'raindrops' ),
 			'excerpt1'		 => '',
@@ -1838,14 +1838,7 @@ html{background:#fff;}
 .rd-type-boots .entry-meta a:hover{
 	 background: {$rgba_border_3}!important;
 }
-.rd-type-boots .yui-t1 #yui-main + .yui-b,
-.rd-type-boots .yui-t2 #yui-main + .yui-b,
-.rd-type-boots .yui-t3 #yui-main + .yui-b{
-	 border-right:1px solid {$rgba_border_3};
-}
-.rd-type-boots .rsidebar{
-	 border-left:1px solid {$rgba_border_3};
-}
+
 .rsidebar .eco-archive > .month , .lsidebar .eco-archive > .month,
 .rsidebar .eco-archive > .year, .lsidebar .eco-archive > .year{
 	 border-bottom:1px solid {$rgba_border_3};
@@ -1894,7 +1887,6 @@ html{background:#fff;}
 	 border:1px solid {$base_color};
 }
 .rd-type-boots figure[id^=attachment] figcaption{
-
 	 background:#fff;
 }
 .rd-type-boots #date_list tr:nth-child(odd) .time,

@@ -29,6 +29,8 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.516.2
+	Modified CSS
 var:1.516.1
 	fixed font size bug
 var:1.516
