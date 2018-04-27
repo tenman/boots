@@ -10,8 +10,6 @@ include_once( get_stylesheet_directory() . '/config.php' );
 add_action( 'after_setup_theme', 'raindrops_child_init' );
 
 function raindrops_child_init() {
-	/* add_action( 'wp_head', 'raindrops_gallerys' ); */
-	add_filter( 'raindrops_indv_css_boots', 'raindrops_embed_css' );
 
 	$raindrops_use_featured_image_emphasis = raindrops_warehouse_clone( 'raindrops_use_featured_image_emphasis' );
 
@@ -51,6 +49,8 @@ function raindrops_child_init() {
 	add_filter( 'raindrops_embed_meta_echo', 'raindrops_child_customizer_relate' );
 
 	add_filter( 'raindrops_custom_header_args', 'boots_header_args', 11 );
+	
+
 }
 
 add_action( 'raindrops_extend_style_type', 'boots_extend_style' );
