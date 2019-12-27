@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/boots
 Description: Raindrops theme of child theme boots, which is the theme for a simple blog, but changing the settings of the customizer, and is scalable themes that can be used as a portal site.　I Won’t Let You Down. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.518
+Version: 1.538
 Tags: one-column,two-columns,three-columns,four-columns,left-sidebar,right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1025,4 +1025,23 @@ div[class^="entry-meta"] .author .avatar,
 }
 .rd-col-3 .lsidebar{
     margin-top:-5px;
+}
+.rd-grid .entry-content{
+    max-width:100%;
+}
+.footer .xoxo li, 
+.lsidebar .xoxo li, 
+.rsidebar .xoxo li{
+    margin-bottom:0;
+}
+.rd-grid ul.search-results > li, 
+.rd-grid ul.archives > li{
+    min-height:250px;
+}
+/**
+ * block editor
+ */
+.block-editor-block-list__block-edit{
+    margin-left:4rem;
+   
 }

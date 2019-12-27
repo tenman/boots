@@ -29,6 +29,9 @@ Note: About boots version.
 The version of the boots theme, version of Raindrops theme check the operation of this child theme is used
 
 Changelog
+var:1.538
+	Added editor style
+		editor mover not showing
 var:1.518
 	Fixed parent theme relate issue.
 		not work

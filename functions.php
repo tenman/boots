@@ -240,3 +240,25 @@ function boots_header_args( $args ) {
 
 	return $args;
 }
+/**
+ * Block editor
+ */
+add_action( 'enqueue_block_editor_assets', 'boots_block_editor_style' );
+
+function boots_block_editor_style() {
+	$dinamic_css = boots_dinamic_style_for_blockeditor();
+
+	if ( is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
+
+		wp_enqueue_style( 'raindrops-block-editor', get_theme_file_uri( 'style.css' ) );
+
+		wp_add_inline_style( 'raindrops-block-editor', $dinamic_css );
+	}
+}
+
+function boots_dinamic_style_for_blockeditor(){
+	$style =<<<CSS
+			
+CSS;
+	return $style;
+}
